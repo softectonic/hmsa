@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Request__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the Reason for submitting this request to the SAS team.</inlineHelpText>
+    <label>Reason for Request</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Proposal</fullName>
+                <default>false</default>
+                <label>Proposal</label>
+            </value>
+            <value>
+                <fullName>OE Presentation w/HPA or HMSA Staff</fullName>
+                <default>false</default>
+                <label>OE Presentation w/HPA or HMSA Staff</label>
+            </value>
+            <value>
+                <fullName>New Group Sales (with 50+ new subscribers - expected)</fullName>
+                <default>false</default>
+                <label>New Group Sales (with 50+ new subscribers - expected)</label>
+            </value>
+            <value>
+                <fullName>Existing Group offering a new HMSA plan</fullName>
+                <default>false</default>
+                <label>Existing Group offering a new HMSA plan</label>
+            </value>
+            <value>
+                <fullName>Existing Group discontinues offering a competitor plan (HMSA sole carrier)</fullName>
+                <default>false</default>
+                <label>Existing Group discontinues offering a competitor plan (HMSA sole carrier)</label>
+            </value>
+            <value>
+                <fullName>Existing Group acquires a new company resulting in new HMSA members</fullName>
+                <default>false</default>
+                <label>Existing Group acquires a new company resulting in new HMSA members</label>
+            </value>
+            <value>
+                <fullName>New Hire packets (based on group turn-over activity)</fullName>
+                <default>false</default>
+                <label>New Hire packets (based on group turn-over activity)</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

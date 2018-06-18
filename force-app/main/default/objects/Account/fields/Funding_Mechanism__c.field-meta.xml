@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Funding_Mechanism__c</fullName>
+    <description>The Funding Meachanism at the Account level indicates how the Groups included within it are being rated, or another key value that determines how they should be managed.  Dependent on the Funding Type field.</description>
+    <externalId>false</externalId>
+    <label>Funding Mechanism</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Funding_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Funding_Mechanism</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Fully Insured</controllingFieldValue>
+            <valueName>Community Rated Group (CRG)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Insured</controllingFieldValue>
+            <valueName>Merit Rated Group (MRG)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fully Insured</controllingFieldValue>
+            <valueName>Retro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self Insured</controllingFieldValue>
+            <valueName>Administrative Services Only (ASO)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Self Insured</controllingFieldValue>
+            <valueName>Alternative Financial Method (AFM)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Government</controllingFieldValue>
+            <valueName>EUTF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Government</controllingFieldValue>
+            <valueName>Fed</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

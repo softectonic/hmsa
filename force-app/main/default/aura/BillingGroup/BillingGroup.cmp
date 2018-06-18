@@ -1,0 +1,32 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId">
+    <lightning:layout >
+        <lightning:layoutItem padding="around-small" size="6">
+    		<div aria-labelledby="newgroupform">
+        		<fieldset class="slds-box slds-theme--default slds-container--small">
+        			<legend id="newgroupform" class="slds-text-heading--small slds-p-vertical--medium">
+          				Add Billing Group
+        			</legend>
+        			<lightning:recordEditForm aura:id="recordEditForm" objectApiName="Billing_Group__c"> 
+                    	<lightning:messages />
+                    	<div class="slds-grid">
+                            <div class="slds-col slds-size_1-of-2">
+            					<lightning:inputField fieldName="Name" />
+                            	<lightning:inputField fieldName="Employee_Count__c" />
+								<lightning:inputField fieldName="Subscriber_Count__c" />
+                            	<lightning:inputField fieldName="Member_Count__c" />
+                            	<lightning:inputField fieldName="Group_Status__c" />
+                   			</div>
+                  			<div class="slds-col slds-size_2-of-2">
+                            	<lightning:inputField fieldName="Account" />
+                            	<lightning:inputField fieldName="Group_Number__c" />
+								<lightning:inputField fieldName="Effective_Date__c" />
+                            	<lightning:inputField fieldName="Renewal_Date__c" />
+                        	</div>
+                 		 </div>
+                        <lightning:button class="slds-m-top_small" type="submit" label="Create record" />
+         			</lightning:recordEditForm>
+      			</fieldset>
+    		</div>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

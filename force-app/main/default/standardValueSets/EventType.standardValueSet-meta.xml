@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Discovery Call/Meeting</fullName>
+        <default>false</default>
+        <label>Discovery Call/Meeting</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Proposal Review</fullName>
+        <default>false</default>
+        <label>Proposal Review</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Regular Check-in</fullName>
+        <default>true</default>
+        <label>Regular Check-in</label>
+    </standardValue>
+</StandardValueSet>

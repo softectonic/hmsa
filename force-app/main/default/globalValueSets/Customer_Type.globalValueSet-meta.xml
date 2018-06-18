@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Employer</fullName>
+        <default>false</default>
+        <label>Employer</label>
+    </customValue>
+    <customValue>
+        <fullName>Union</fullName>
+        <default>false</default>
+        <label>Union</label>
+    </customValue>
+    <customValue>
+        <fullName>Association</fullName>
+        <default>false</default>
+        <label>Association</label>
+    </customValue>
+    <customValue>
+        <fullName>Trust Fund</fullName>
+        <default>false</default>
+        <label>Trust Fund</label>
+    </customValue>
+    <masterLabel>Customer Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

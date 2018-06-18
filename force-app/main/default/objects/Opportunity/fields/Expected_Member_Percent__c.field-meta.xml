@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expected_Member_Percent__c</fullName>
+    <description>Allows the user to indicate what percentage of people they think will choose the plan that is being offered, by applying this value to the Employee Count or the Member Count.</description>
+    <externalId>false</externalId>
+    <label>Expected Member %</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

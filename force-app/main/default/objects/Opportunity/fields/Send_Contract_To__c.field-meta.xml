@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Contract_To__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>Fill out this field if you wan the Contract sent to someone other than the GPA Notice Contact.</inlineHelpText>
+    <label>Send Contract To</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Opportunities (Send Contract To)</relationshipLabel>
+    <relationshipName>Opportunities_Send_Contract</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

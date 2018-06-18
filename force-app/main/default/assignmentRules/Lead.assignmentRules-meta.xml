@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>Lead Assignment Rule</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <assignedTo>Large_Group</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.NumberOfEmployees</field>
+                <operation>greaterThan</operation>
+                <value>50</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Small_Group</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.NumberOfEmployees</field>
+                <operation>greaterThan</operation>
+                <value>1</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.NumberOfEmployees</field>
+                <operation>lessOrEqual</operation>
+                <value>50</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Individual</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.NumberOfEmployees</field>
+                <operation>lessOrEqual</operation>
+                <value>1</value>
+            </criteriaItems>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

@@ -1,0 +1,89 @@
+<aura:component extends="c:DataGridCell">
+    <aura:attribute name="refValue" type="String"/>
+    <aura:attribute name="refLabel" type="String"/>
+    <aura:attribute name="refObjName" type="String" /> 
+    
+    <aura:attribute name="isSearching" type="Boolean" /> 
+    <aura:attribute name="searchTerm" type="String" />     
+    <aura:attribute name="searchResults" type="Object[]" />     
+    <aura:attribute name="hasResults" type="Boolean" /> 
+    <aura:attribute name="isSelecting" type="Boolean" /> 
+    <aura:attribute name="mouseOverList" type="Boolean" default="false"/>
+    
+    <!-- declare events handlers -->
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+    <aura:attribute name="Message" type="String" default=""/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" /> 
+    
+    <aura:if isTrue="{!v.displayMode == 'read'}">
+        <ui:outputURL aura:id="outputCell" value="{!v.refValue}" label="{!v.refLabel}"/> 
+        <aura:set attribute="else">
+            <div aura:id="searchContainer" class="slds-form-element slds-lookup slds-is-close" data-select="single">
+                <aura:if isTrue="{!v.isSearching}">
+                    <!-- Search Input -->
+                    <div class="slds-form-element__control">
+                        <ui:inputText aura:id="inputCell" class="slds-lookup__search-input slds-input"
+                                      value="{!v.searchTerm}" placeholder="{!'Select '+v.label}"                                       
+                                      keyup="{!c.handleSearchChange}" updateOn="keyup"
+                                      blur="{!c.handleSearchBlur}"
+                                      click="{!c.onFocus}"/>
+                    </div>
+                </aura:if>                		
+                <aura:if isTrue="{!(!v.isSearching)}">
+                    <!-- Lookup Field -->                    
+                    <div class="slds-form-element__control">
+                        <div class="slds-pill_container">
+                            <span class="slds-pill slds-size--1-of-1">
+                                <span class="slds-pill__label" title="{!v.refLabel}">{!v.refLabel}</span>
+                                <lightning:buttonIcon aura:id="removeButton" iconName="utility:close" size="medium" variant="bare"
+                                                      onclick="{!c.toggleSearching}" alternativeText="Remove" />                                        
+                            </span>
+                        </div>
+                    </div>
+                </aura:if>
+                <!-- Search Results -->
+                <aura:if isTrue="{!v.hasResults}">
+                    <div id="searchResults"
+                         onmouseover="{!c.onMouseOver}" 
+                         onmouseout="{!c.onMouseOut}">
+                        <ul class="slds-lookup__list slds-listbox_vertical slds-dropdown slds-dropdown_fluid slds-lookup__menu slds" role="listbox">
+                            <center>
+                				<lightning:spinner aura:id="spinner" class="slds-hide"/>
+            				</center>
+            				<center> {!v.Message}</center>
+                            <aura:iteration items="{!v.searchResults}" var="res">
+                                <li role="presentation" onclick="{!c.handleResultSelect}" id="{!res.Id}" title="{!res.Name}">
+                                    <span class="slds-lookup__item-action slds-media" role="option">
+                                        <div class="slds-media__body">
+                                            <div class="slds-lookup__result-text">
+                                                {!res.Name}
+                                            </div>                                              
+                                        </div>
+                                    </span>
+                                </li>
+                            </aura:iteration>
+                            
+                            <!-- New Button 
+                            <li role="presentation" class="slds-listbox__item" onclick="{!c.createNewRecord}">
+                                <span id="listbox-option-unique-id-01" class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+                                    <span class="slds-media__figure">
+                          				<span class="slds-icon_container" title="Description of icon when needed">
+                            				<lightning:icon iconName="utility:add" class="slds-icon slds-icon_small" size="x-small" alternativeText="icon"/>
+                            				<span class="slds-assistive-text">Add New Record</span>
+                          				</span>
+                      				</span>
+                      				<span class="slds-media__body" style="padding: 4px;">
+                          				<span class="slds-listbox__option-text slds-listbox__option-text_entity">New {!v.label}</span>
+                      				</span>
+                				</span>
+            				</li> 
+							-->                        
+                        </ul>
+                    </div>
+                </aura:if>
+            </div>
+        </aura:set>
+    </aura:if>
+</aura:component>
