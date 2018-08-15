@@ -1,4 +1,18 @@
-<aura:component >    
+<aura:component > 
+    
+<!--====================================================
+	Name:  ProductListEdit Component                       
+	====================================================
+	Purpose:                                           
+	Sub component for Group Product Mgmt custom
+	component.                                           
+	====================================================
+ 	History:                                                                                        
+	VERSION    AUTHOR     DATE     DETAIL    DESCRIPTION 
+	1.0        aashiru    07/2018  Created             
+                                                     
+	====================================================-->     
+    
     <aura:attribute name="context" type="Object" required="false"  />    
     <aura:attribute name="showDialog" type="Boolean" default="false" />
     

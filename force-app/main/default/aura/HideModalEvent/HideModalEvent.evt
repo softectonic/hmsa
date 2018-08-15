@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="hide modal" >
+    <aura:attribute name="hideModal" type="boolean"/>
+</aura:event>

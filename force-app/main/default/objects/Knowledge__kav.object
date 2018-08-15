@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <articleTypeChannelDisplay>
+        <articleTypeTemplates>
+            <channel>App</channel>
+            <template>Tab</template>
+        </articleTypeTemplates>
+        <articleTypeTemplates>
+            <channel>Prm</channel>
+            <template>Tab</template>
+        </articleTypeTemplates>
+        <articleTypeTemplates>
+            <channel>Csp</channel>
+            <template>Tab</template>
+        </articleTypeTemplates>
+        <articleTypeTemplates>
+            <channel>Pkb</channel>
+            <template>Toc</template>
+        </articleTypeTemplates>
+    </articleTypeChannelDisplay>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <fields>
+        <fullName>Answer__c</fullName>
+        <externalId>false</externalId>
+        <label>Answer</label>
+        <length>131072</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Applicable_Department__c</fullName>
+        <externalId>false</externalId>
+        <label>Applicable Department</label>
+        <required>false</required>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>CR</fullName>
+                    <default>false</default>
+                    <label>CR</label>
+                </value>
+                <value>
+                    <fullName>MS</fullName>
+                    <default>false</default>
+                    <label>MS</label>
+                </value>
+                <value>
+                    <fullName>QUEST</fullName>
+                    <default>false</default>
+                    <label>QUEST</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Article_Audience__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Audience for the article content.</inlineHelpText>
+        <label>Article Audience</label>
+        <required>false</required>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Employer Group</fullName>
+                    <default>false</default>
+                    <label>Employer Group</label>
+                </value>
+                <value>
+                    <fullName>Member</fullName>
+                    <default>false</default>
+                    <label>Member</label>
+                </value>
+                <value>
+                    <fullName>Provider</fullName>
+                    <default>false</default>
+                    <label>Provider</label>
+                </value>
+                <value>
+                    <fullName>Internal Only</fullName>
+                    <default>false</default>
+                    <label>Internal Only</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Article_SME_Department_s__c</fullName>
+        <description>The department(s) who is/are the subject matter experts (SMEs) who can validate whether the information displayed in the article is accurate and current.  Also includes the department(s) contact(s) information.</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>The department(s) who is/are the subject matter experts (SMEs) who can validate whether the information displayed in the article is accurate and current.  Also includes the department(s) contact(s) information.</inlineHelpText>
+        <label>Article SME Department(s)</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Article_SME_Last_Review_Date__c</fullName>
+        <description>Last date the article department subject matter expert (SME) reviewed the article content for up-to-date accuracy.</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Last date the article department subject matter expert (SME) reviewed the article content for up-to-date accuracy.</inlineHelpText>
+        <label>Article SME Last Review Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Article_SME_Next_Review_Date__c</fullName>
+        <description>Next date the article department subject matter expert (SME) to review the article content for up-to-date accuracy.</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Next date the article department subject matter expert (SME) to review the article content for up-to-date accuracy.</inlineHelpText>
+        <label>Article SME Next Review Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Article_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Article Source</label>
+        <length>131072</length>
+        <type>Html</type>
+        <visibleLines>50</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Change_History__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Summary of changes made to the article</inlineHelpText>
+        <label>Change History</label>
+        <length>130000</length>
+        <type>Html</type>
+        <visibleLines>50</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Content__c</fullName>
+        <externalId>false</externalId>
+        <label>Content</label>
+        <length>131072</length>
+        <type>Html</type>
+        <visibleLines>50</visibleLines>
+    </fields>
+    <fields>
+        <fullName>External_Content__c</fullName>
+        <externalId>false</externalId>
+        <label>External Content</label>
+        <length>131072</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Plan_LOB__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Don&apos;t need this anymore as we will have categories for this information - Plan type line of business (LOB) applicable to the article content.</inlineHelpText>
+        <label>Plan LOB</label>
+        <required>false</required>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Akamai Advantage (AA)</fullName>
+                    <default>false</default>
+                    <label>Akamai Advantage (AA)</label>
+                </value>
+                <value>
+                    <fullName>Essential Advantage</fullName>
+                    <default>false</default>
+                    <label>Essential Advantage</label>
+                </value>
+                <value>
+                    <fullName>Private Business (PB)</fullName>
+                    <default>false</default>
+                    <label>Private Business (PB)</label>
+                </value>
+                <value>
+                    <fullName>PPO</fullName>
+                    <default>false</default>
+                    <label>PPO</label>
+                </value>
+                <value>
+                    <fullName>HMO</fullName>
+                    <default>false</default>
+                    <label>HMO</label>
+                </value>
+                <value>
+                    <fullName>Federal Plan 87</fullName>
+                    <default>false</default>
+                    <label>Federal Plan 87</label>
+                </value>
+                <value>
+                    <fullName>EUTF</fullName>
+                    <default>false</default>
+                    <label>EUTF</label>
+                </value>
+                <value>
+                    <fullName>QUEST</fullName>
+                    <default>false</default>
+                    <label>QUEST</label>
+                </value>
+                <value>
+                    <fullName>Federal Employee Program (FEP)</fullName>
+                    <default>false</default>
+                    <label>Federal Employee Program (FEP)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Question__c</fullName>
+        <description>Question for FAQ</description>
+        <externalId>false</externalId>
+        <label>Question</label>
+        <length>32768</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Related_Links__c</fullName>
+        <externalId>false</externalId>
+        <label>Related Links</label>
+        <length>131072</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Supplemental_Keywords__c</fullName>
+        <externalId>false</externalId>
+        <label>Supplemental Keywords</label>
+        <length>131072</length>
+        <type>Html</type>
+        <visibleLines>50</visibleLines>
+    </fields>
+    <fields>
+        <fullName>URL__c</fullName>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <label>URL</label>
+        <required>false</required>
+        <type>Url</type>
+    </fields>
+    <label>Knowledge</label>
+    <listViews>
+        <fullName>archived_articles</fullName>
+        <columns>TITLE</columns>
+        <columns>ABSTRACT</columns>
+        <columns>ARTICLE_NUMBER</columns>
+        <columns>LANGUAGE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PUBLISH_STATUS</field>
+            <operation>equals</operation>
+            <value>3</value>
+        </filters>
+        <filters>
+            <field>LANGUAGE</field>
+            <operation>equals</operation>
+            <value>en_US</value>
+        </filters>
+        <label>Archived Articles</label>
+    </listViews>
+    <listViews>
+        <fullName>draft_articles</fullName>
+        <columns>TITLE</columns>
+        <columns>ABSTRACT</columns>
+        <columns>ARTICLE_NUMBER</columns>
+        <columns>LANGUAGE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PUBLISH_STATUS</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>LANGUAGE</field>
+            <operation>equals</operation>
+            <value>en_US</value>
+        </filters>
+        <label>Draft Articles</label>
+    </listViews>
+    <listViews>
+        <fullName>published_articles</fullName>
+        <columns>TITLE</columns>
+        <columns>ABSTRACT</columns>
+        <columns>ARTICLE_NUMBER</columns>
+        <columns>LANGUAGE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PUBLISH_STATUS</field>
+            <operation>equals</operation>
+            <value>2</value>
+        </filters>
+        <filters>
+            <field>LANGUAGE</field>
+            <operation>equals</operation>
+            <value>en_US</value>
+        </filters>
+        <label>Published Articles</label>
+    </listViews>
+    <pluralLabel>Knowledge</pluralLabel>
+    <recordTypes>
+        <fullName>FAQ</fullName>
+        <active>true</active>
+        <description>This can be used for simple question and answer articles</description>
+        <label>FAQ</label>
+        <picklistValues>
+            <picklist>Applicable_Department__c</picklist>
+            <values>
+                <fullName>CR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QUEST</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Article_Audience__c</picklist>
+            <values>
+                <fullName>Employer Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provider</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Plan_LOB__c</picklist>
+            <values>
+                <fullName>Akamai Advantage %28AA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUTF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Essential Advantage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal Employee Program %28FEP%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal Plan 87</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HMO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PPO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Private Business %28PB%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QUEST</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+</CustomObject>

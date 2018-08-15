@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Account Planning</fullName>
+        <default>false</default>
+        <label>Account Planning</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Benefit Fair</fullName>
+        <default>false</default>
+        <label>Benefit Fair</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Blue Zone Project</fullName>
+        <default>false</default>
+        <label>Blue Zone Project</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Data Reports</fullName>
+        <default>false</default>
+        <label>Data Reports</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Health Fair</fullName>
+        <default>false</default>
+        <label>Health Fair</label>
+    </standardValue>
+    <standardValue>
+        <fullName>HMSA Health/Well-Being Programs</fullName>
+        <default>false</default>
+        <label>HMSA Health/Well-Being Programs</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Legal Issues</fullName>
+        <default>false</default>
+        <label>Legal Issues</label>
+    </standardValue>
+    <standardValue>
+        <fullName>OE Presentation</fullName>
+        <default>false</default>
+        <label>OE Presentation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Proposal Review</fullName>
+        <default>false</default>
+        <label>Proposal Review</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Renewals</fullName>
+        <default>false</default>
+        <label>Renewals</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Service Issues</fullName>
+        <default>false</default>
+        <label>Service Issues</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Sharecare</fullName>
+        <default>false</default>
+        <label>Sharecare</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Voice Over Recording</fullName>
+        <default>false</default>
+        <label>Voice Over Recording</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Webinar</fullName>
+        <default>false</default>
+        <label>Webinar</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+</StandardValueSet>

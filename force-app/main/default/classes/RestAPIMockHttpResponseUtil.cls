@@ -1,4 +1,17 @@
-global class RestAPIMockHttpResponseUtil {
+/*****************************************************************
+Name:  RestAPIMockHttpResponseUtil
+ 
+=================================================================
+Purpose: 
+Apex REST API Mock utility methods                                                                                                                       
+=================================================================
+History                                                            
+-------                                                            
+VERSION  AUTHOR         DATE           DETAIL          Description
+1.0   	 aashiru        06/2018        Created         AMS: 
+*****************************************************************/
+
+global class RestAPIMockHttpResponseUtil implements HttpCalloutMock {
 	 global HTTPResponse respond(HTTPRequest req) {        
         StaticResourceCalloutMock mock = new StaticResourceCalloutMock();        
         mock.setHeader('Content-Type', 'application/json');

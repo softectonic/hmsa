@@ -1,33 +1,54 @@
 <aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:hasRecordId" 
                 controller="ProductListController"
-                access="global" >    
+                access="global" > 
+    
+<!--====================================================
+	Name:  ProductList Component                       
+	====================================================
+	Purpose:                                           
+	Parent Container for Group Product Mgmt custom
+	component.                                           
+	====================================================
+ 	History:                                                                                        
+	VERSION    AUTHOR     DATE     DETAIL    DESCRIPTION 
+	1.0        aashiru    06/2018  Created             
+                                                     
+	====================================================-->
+    
     <aura:attribute name="relatedListLabel" type="String" default="Products" access="global"/>     
     <aura:attribute name="relatedObjectName" type="String" default=""/> 
     <aura:attribute name="relatedListName" type="String"/> 
-    
     <aura:attribute name="columns" type="Object[]"/>
     <aura:attribute name="items" type="Object[]"/>
     <aura:attribute name="oldItems" type="Object[]"/>
-    
+    <aura:attribute name="options" type="Object[]"/>
+    <aura:attribute name="optionsList" type="Object[]"/>
+    <aura:attribute name="selectedItems" type="Object[]"/>
+    <aura:attribute name="oldSelectedItems" type="Object[]"/>
+    <aura:attribute name="lastSelectedItems" type="Object[]"/>
+    <aura:attribute name="oldLastSelectedItems" type="Object[]"/>
     <aura:attribute name="displayMode" type="String" default="read"/>
-    
     <aura:attribute name="canCreate" type="Boolean" default="false"/>
     <aura:attribute name="filter" type="String"/>
     <aura:attribute name="aggregate" type="String"/>
     <aura:attribute name="aggregations" type="Object[]"/>
-    
     <aura:attribute name="defaultValues" type="String" default="{}"/>
     <aura:attribute name="customLabel" type="String" default="Opportunity Products"/> 
     <aura:attribute name="customIcon" type="String" default="standard:product"/> 
     <aura:attribute name="sort" type="String"/>
     <aura:attribute name="order" type="String" default="desc"/>
-    
     <aura:attribute name="viewAllLink" type="String"/>    
     <aura:attribute name="displayLabel" type="String"/> 
+    <aura:attribute name="displayNewGroup" type="Boolean" default="false"/>
     
     <!-- Handle component initialization in a client-side controller -->
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" /> 
+    
+    <!-- Handle events -->
     <aura:handler event="force:refreshView" action="{!c.reloadItems}"/>
+    <aura:handler event="c:ClosedModalEvent" action="{!c.closedModal}"/> 
+    <aura:handler event="c:ShowModalEvent" action="{!c.showModal}"/> 
+    <aura:handler event="c:HideModalEvent" action="{!c.hideModal}"/> 
     
     <article aura:id="gridContainer" class="slds-card">
          <div class="slds-card__header slds-grid">
@@ -69,16 +90,21 @@
                                     {!column.label}
                                 </div>
                             </th>
-                        </aura:iteration>                           
+                        </aura:iteration> 
                     </tr>
                 </thead>
                 <tbody>
+                    
                     <aura:iteration items="{!v.items}" 
                                     var="item" 
-                                    indexVar="itemRank">                  
+                                    indexVar="itemRank"> 
                         <c:DataGridRow aura:id="row"
                                                 displayMode="{!v.displayMode}"
-                                                columns="{!v.columns}"                                                 
+                                                columns="{!v.columns}" 
+                                       			optionsList="{!v.optionsList}"
+                                                options="{!v.options}" 
+                                       			selectedItems="{!v.selectedItems}"
+                                                lastSelectedItems="{!v.lastSelectedItems}"
                                                 item="{!item}" 
                                                 itemRank="{!itemRank}"
                                                 onDelete="{!c.actionDelete}"
@@ -116,7 +142,10 @@
         </div>
         -->                  
     </article>  
-    
+    <aura:if isTrue="{!v.displayNewGroup}">
+        <!-- this component contains popup and fields to save new billing group info -->
+        <c:BillingGroup /> 
+    </aura:if>
     <c:ProductListEdit aura:id="editDialog" onClose="{!c.editCallback}" onSave="{!c.saveCallback}" />
     <c:DataGridDialog aura:id="deleteDialog" type="CONFIRM" onClose="{!c.deleteCallback}" />           
     <c:DataGridDialog aura:id="loaderDialog" type="LOADER" />    

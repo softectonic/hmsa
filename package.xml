@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>AMS_ErrorLogger</members>
+        <members>AMS_ErrorLoggerTest</members>
         <members>OpportunityRenewalBatch</members>
         <members>OpportunityRenewalClosedBatch</members>
         <members>OpportunityRenewalClosedSchedule</members>
@@ -9,11 +11,15 @@
         <members>OpportunityRenewalOfRatingClassSchedule</members>
         <members>OpportunityRenewalSchedule</members>
         <members>OpportunityRenewalTest</members>
+        <members>OpportunityTriggerHandler</members>
+        <members>OpportunityTriggerHelper</members>
+        <members>OpportunityTriggerTest</members>
         <members>ProductListController</members>
         <members>ProductListControllerTest</members>
         <members>RestAPIMockHttpResponseUtil</members>
         <members>RestAPIUtils</members>
         <members>RestAPIUtilsTest</members>
+        <members>SelectInspectionController</members>
         <members>TestDataFactory</members>
         <name>ApexClass</name>
     </types>
@@ -22,25 +28,62 @@
         <name>ApexPage</name>
     </types>
     <types>
-        <members>AppSwitcher</members>
-        <name>AppMenu</name>
+        <members>Opportunity</members>
+        <name>ApexTrigger</name>
     </types>
     <types>
         <members>Lead.Lead Assignment Rule</members>
         <name>AssignmentRule</name>
     </types>
     <types>
-        <members>*</members>
+        <members>BillingGroup</members>
+        <members>ClosedModalEvent</members>
+        <members>DataGridCell</members>
+        <members>DataGridCellBoolean</members>
+        <members>DataGridCellCurrency</members>
+        <members>DataGridCellDate</members>
+        <members>DataGridCellDatetime</members>
+        <members>DataGridCellDouble</members>
+        <members>DataGridCellEmail</members>
+        <members>DataGridCellFormula</members>
+        <members>DataGridCellInteger</members>
+        <members>DataGridCellLink</members>
+        <members>DataGridCellMultiSelect</members>
+        <members>DataGridCellPercent</members>
+        <members>DataGridCellPhone</members>
+        <members>DataGridCellPickList</members>
+        <members>DataGridCellReference</members>
+        <members>DataGridCellString</members>
+        <members>DataGridCellTextArea</members>
+        <members>DataGridCellUrl</members>
+        <members>DataGridCloseDialogEvent</members>
+        <members>DataGridDialog</members>
+        <members>DataGridEvent</members>
+        <members>DataGridRow</members>
+        <members>HideModalEvent</members>
+        <members>NewBillingGroupEvent</members>
+        <members>ProductList</members>
+        <members>ProductListEdit</members>
+        <members>SelectedRecordsEvent</members>
+        <members>ShowModalEvent</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
         <members>Case.AMS Internal</members>
+        <members>Case.AMS Internal HPA</members>
+        <members>Lead.Sales Lead Process</members>
         <members>Opportunity.AMS Global</members>
         <name>BusinessProcess</name>
     </types>
     <types>
         <members>Account.AMS</members>
+        <members>Account.AMS_Agency</members>
+        <members>Billing_Group__c.Billing_Group</members>
+        <members>Billing_Product_Detail__c.Billing_Product_Detail_Compact_Layout</members>
+        <members>Billing_Product__c.Billing_Product_Compact_Layout</members>
         <members>Case.AMS</members>
+        <members>Case.SAS_ONE</members>
+        <members>Case.SBC_Request</members>
         <members>Contact.AMS</members>
         <members>Lead.AMS</members>
         <members>Opportunity.AMS</members>
@@ -48,66 +91,212 @@
         <name>CompactLayout</name>
     </types>
     <types>
+        <members>HMSA20Logo2020Blue</members>
+        <name>ContentAsset</name>
+    </types>
+    <types>
         <members>AMS_Sales</members>
         <name>CustomApplication</name>
     </types>
     <types>
+        <members>AMS_App_Config__c.Days_Before_Oppty_Renewal__c</members>
+        <members>AMS_App_Config__c.Days_Post_Oppty_Renewal__c</members>
+        <members>AMS_App_Config__c.Months_Post_Rating_Class__c</members>
+        <members>AMS_Error_Log__c.Error_Message__c</members>
+        <members>AMS_Error_Log__c.Fields__c</members>
+        <members>AMS_Error_Log__c.Operation__c</members>
+        <members>AMS_Error_Log__c.Stack_Trace__c</members>
+        <members>AMS_Error_Log__c.Status_Code__c</members>
+        <members>Account.Active_Billing_Group_Count__c</members>
         <members>Account.Customer_Stage__c</members>
         <members>Account.Customer_Type__c</members>
-        <members>Account.Dynamics_ID_Text_36__c</members>
         <members>Account.Forecasted_Members_Total__c</members>
         <members>Account.Funding_Mechanism__c</members>
         <members>Account.Funding_Type__c</members>
         <members>Account.Group_ACA_Option__c</members>
         <members>Account.Is_national_account__c</members>
         <members>Account.Island__c</members>
+        <members>Account.Load_ID__c</members>
+        <members>Account.Market_Segment__c</members>
         <members>Account.Member_Count_Total__c</members>
         <members>Account.Most_Recent_Group_Create_Date__c</members>
-        <members>Account.SAP_Account__c</members>
+        <members>Account.Next_Renewal_Date__c</members>
         <members>Account.Subscriber_Count_Total__c</members>
+        <members>Account.Tax_ID__c</members>
+        <members>Account.Third_Party_Offering__c</members>
+        <members>Account.Total_Eligible_Employees__c</members>
+        <members>Account.Unemployment_Insurance_No__c</members>
+        <members>Account.Union_Name__c</members>
+        <members>Activity.Activity_Type__c</members>
+        <members>Activity.Actual_Attendees__c</members>
+        <members>Activity.Additional_Event_Support__c</members>
+        <members>Activity.City__c</members>
+        <members>Activity.Competitor__c</members>
+        <members>Activity.Event_End__c</members>
+        <members>Activity.Event_Start__c</members>
+        <members>Activity.Expected_Attendee_Count__c</members>
+        <members>Activity.Island__c</members>
+        <members>Activity.Load_ID__c</members>
+        <members>Activity.State_Province__c</members>
+        <members>Activity.Street__c</members>
+        <members>Activity.X2nd_HPA_Assignee__c</members>
+        <members>Activity.X3rd_HPA_Assignee__c</members>
+        <members>Activity.Zip_Postal_Code__c</members>
+        <members>Billing_Group_Opp_Product__c.Billing_Group__c</members>
+        <members>Billing_Group_Opp_Product__c.Domestic_Partnership_Allowed__c</members>
+        <members>Billing_Group_Opp_Product__c.Full_Group_Number__c</members>
+        <members>Billing_Group_Opp_Product__c.Opportunity_Product_ID__c</members>
+        <members>Billing_Group_Opp_Product__c.Opportunity__c</members>
+        <members>Billing_Group_Opp_Product__c.Req_Agent_Code__c</members>
+        <members>Billing_Group_Opp_Product__c.Req_Rating_Class__c</members>
+        <members>Billing_Group_Opp_Product__c.Retro_Cancellation_Allowance__c</members>
+        <members>Billing_Group__c.Account__c</members>
+        <members>Billing_Group__c.Agent_Code__c</members>
+        <members>Billing_Group__c.COBRA_Admin__c</members>
+        <members>Billing_Group__c.Cancel_Date__c</members>
+        <members>Billing_Group__c.City__c</members>
+        <members>Billing_Group__c.Data_Pull_Date__c</members>
+        <members>Billing_Group__c.Dental_Band__c</members>
+        <members>Billing_Group__c.Domestic_Partnership_Allowed__c</members>
+        <members>Billing_Group__c.Drug_Band__c</members>
+        <members>Billing_Group__c.Employee_Count__c</members>
+        <members>Billing_Group__c.Experience_Period__c</members>
+        <members>Billing_Group__c.Full_Group_Number__c</members>
+        <members>Billing_Group__c.Grandfathered__c</members>
+        <members>Billing_Group__c.Group_Number__c</members>
+        <members>Billing_Group__c.Group_Status__c</members>
+        <members>Billing_Group__c.Group_Sub_Number__c</members>
+        <members>Billing_Group__c.Med_Band__c</members>
+        <members>Billing_Group__c.Member_Count__c</members>
+        <members>Billing_Group__c.Original_Effective_Date__c</members>
+        <members>Billing_Group__c.Rating_Class__c</members>
+        <members>Billing_Group__c.Renewal_Date__c</members>
+        <members>Billing_Group__c.Renewal_Month__c</members>
+        <members>Billing_Group__c.Renewal_Rating_to_SAM_By__c</members>
+        <members>Billing_Group__c.Requested_Agent_Code__c</members>
+        <members>Billing_Group__c.Requested_Billing_Group_Name__c</members>
+        <members>Billing_Group__c.Requested_COBRA_Admin__c</members>
+        <members>Billing_Group__c.Requested_City__c</members>
+        <members>Billing_Group__c.Requested_Employee_Count__c</members>
+        <members>Billing_Group__c.Requested_Grandfathered__c</members>
+        <members>Billing_Group__c.Requested_Rating_Class__c</members>
+        <members>Billing_Group__c.Requested_State_Province__c</members>
+        <members>Billing_Group__c.Requested_Street__c</members>
+        <members>Billing_Group__c.Requested_Zip_Postal_Code__c</members>
+        <members>Billing_Group__c.Retro_Cancellation_Allowance__c</members>
+        <members>Billing_Group__c.State_Province__c</members>
+        <members>Billing_Group__c.Street__c</members>
+        <members>Billing_Group__c.Subscriber_Count__c</members>
+        <members>Billing_Group__c.System_Auto_Number__c</members>
+        <members>Billing_Group__c.Zip_Postal_Code__c</members>
+        <members>Billing_Product_Detail__c.Billing_Product__c</members>
+        <members>Billing_Product_Detail__c.Cov_Code_Formula__c</members>
+        <members>Billing_Product_Detail__c.Coverage_Code_Type__c</members>
+        <members>Billing_Product_Detail__c.Family__c</members>
+        <members>Billing_Product_Detail__c.Single__c</members>
+        <members>Billing_Product_Detail__c.Sub_Child__c</members>
+        <members>Billing_Product_Detail__c.Sub_Children__c</members>
+        <members>Billing_Product_Detail__c.Sub_Spouse__c</members>
+        <members>Billing_Product_Detail__c.Two_Party__c</members>
+        <members>Billing_Product__c.Account_ID__c</members>
+        <members>Billing_Product__c.Billing_Group__c</members>
+        <members>Billing_Product__c.CAPS_Package_ID__c</members>
+        <members>Billing_Product__c.Complementary_Coverage_Code__c</members>
+        <members>Billing_Product__c.Contract_Number__c</members>
+        <members>Billing_Product__c.Dental_Coverage_Code__c</members>
+        <members>Billing_Product__c.Drug_Coverage_Code__c</members>
+        <members>Billing_Product__c.Effective_Date__c</members>
+        <members>Billing_Product__c.Family_Total__c</members>
+        <members>Billing_Product__c.Med_Coverage_Code__c</members>
+        <members>Billing_Product__c.Member_Count__c</members>
+        <members>Billing_Product__c.Product__c</members>
+        <members>Billing_Product__c.Single_Total__c</members>
+        <members>Billing_Product__c.Sub_Child_Total__c</members>
+        <members>Billing_Product__c.Sub_Children_Total__c</members>
+        <members>Billing_Product__c.Sub_Spouse_Total__c</members>
+        <members>Billing_Product__c.Subscriber_Count__c</members>
+        <members>Billing_Product__c.Termination_Date__c</members>
+        <members>Billing_Product__c.Two_Party_Total__c</members>
+        <members>Billing_Product__c.Vision_Coverage_Code__c</members>
+        <members>Case.Account_Owner__c</members>
+        <members>Case.Additional_Information__c</members>
         <members>Case.Akamai_Group_Option__c</members>
         <members>Case.Case_Age__c</members>
         <members>Case.Contract_Template__c</members>
+        <members>Case.Delivery_Output_Type__c</members>
+        <members>Case.Effective_Date__c</members>
+        <members>Case.Enrollment_Form_Quantity__c</members>
+        <members>Case.Enrollment_Forms__c</members>
         <members>Case.From_ASR__c</members>
-        <members>Case.From_ECM_Received_GTBs__c</members>
+        <members>Case.From_ECM__c</members>
         <members>Case.From_Legal__c</members>
         <members>Case.From_Underwriting__c</members>
+        <members>Case.Group_Brochure_Request__c</members>
+        <members>Case.Guide_to_Benefits_Quantity__c</members>
         <members>Case.Has_Early_Termination__c</members>
         <members>Case.Has_Retro_Cancallation__c</members>
+        <members>Case.How_Many_Hard_Copies__c</members>
         <members>Case.Internal_Due_Date__c</members>
         <members>Case.Internal_Requestor_to_Review__c</members>
         <members>Case.Internal_Sub_Status__c</members>
+        <members>Case.Manager_Rush_Approval_Date__c</members>
+        <members>Case.Misc_Output_Quantity__c</members>
+        <members>Case.Misc_Output_Types__c</members>
+        <members>Case.New_Hire_Packet_Quantity__c</members>
+        <members>Case.New_Hire_Packet_Type__c</members>
         <members>Case.Opportunity__c</members>
+        <members>Case.Owner_Manager__c</members>
+        <members>Case.Provider_Directory__c</members>
         <members>Case.Reason_for_Request__c</members>
         <members>Case.SAS_Fulfillment_Type__c</members>
         <members>Case.Signature_Option__c</members>
         <members>Case.To_ASR__c</members>
         <members>Case.To_ECM_Requested_for_GTBs__c</members>
+        <members>Case.To_ECM__c</members>
         <members>Case.To_Legal__c</members>
         <members>Case.To_Underwriting__c</members>
         <members>Case.Tracking_Number__c</members>
+        <members>Competitor_Details__c.Competitor_Details__c</members>
+        <members>Competitor_Details__c.Competitor__c</members>
+        <members>Competitor_Details__c.Opportunity__c</members>
+        <members>Competitor_Details__c.Product__c</members>
+        <members>Competitor_Details__c.Won__c</members>
+        <members>Contact.Load_ID__c</members>
+        <members>Contact.Status__c</members>
         <members>Coverage_Code__c.Active_Through__c</members>
+        <members>Coverage_Code__c.Coverage_Code_Type__c</members>
+        <members>Coverage_Code__c.Current_Cov_Code__c</members>
+        <members>Coverage_Code__c.New_Cov_Code__c</members>
+        <members>Coverage_Code__c.Start_Date__c</members>
         <members>Lead.Customer_Type__c</members>
-        <members>Lead.MobilePhone</members>
         <members>Opportunity.Additional_Contract_Copy_To__c</members>
+        <members>Opportunity.Ancillary_Missing_Revenue_Count__c</members>
         <members>Opportunity.Base_Default_Plan_Explanation__c</members>
         <members>Opportunity.Base_Default_Plan__c</members>
         <members>Opportunity.Competitor_s__c</members>
+        <members>Opportunity.Contract_Received_Date__c</members>
         <members>Opportunity.Contract_Sending_Method__c</members>
+        <members>Opportunity.Contract_Sent_Date__c</members>
         <members>Opportunity.Contract_Type__c</members>
-        <members>Opportunity.Current_Carrier__c</members>
         <members>Opportunity.Effective_Date__c</members>
         <members>Opportunity.Effective_End_Date__c</members>
         <members>Opportunity.Employee_Count__c</members>
         <members>Opportunity.Employer_s_of_Total_Premium__c</members>
         <members>Opportunity.Evergreen_Term_Length__c</members>
+        <members>Opportunity.Expected_Enrollment_Percent__c</members>
         <members>Opportunity.Expected_Member_Percent__c</members>
+        <members>Opportunity.Expected_Subscriber_Percent__c</members>
         <members>Opportunity.Forecasted_Members_For_Rollup__c</members>
         <members>Opportunity.Forecasted_Members__c</members>
+        <members>Opportunity.Forecasted_Subscribers__c</members>
         <members>Opportunity.Fulfillment_Type__c</members>
+        <members>Opportunity.Funding_Mechanism__c</members>
+        <members>Opportunity.Funding_Type__c</members>
         <members>Opportunity.GPA_Notice_Contact__c</members>
         <members>Opportunity.Has_New_Group__c</members>
+        <members>Opportunity.Health_Check__c</members>
         <members>Opportunity.How_Many_Hard_Copies__c</members>
+        <members>Opportunity.Initiating_Billing_Group__c</members>
         <members>Opportunity.Is_SAS_Request_a_Rush__c</members>
         <members>Opportunity.Jeopardy_Status__c</members>
         <members>Opportunity.Lost_Reason__c</members>
@@ -115,102 +304,201 @@
         <members>Opportunity.Member_out_of_pocket_contribution__c</members>
         <members>Opportunity.Opportunity_Owner_Manager__c</members>
         <members>Opportunity.Pain_Points__c</members>
+        <members>Opportunity.Proposal_Confirmation_Date__c</members>
+        <members>Opportunity.Proposal_Sent_Date__c</members>
         <members>Opportunity.Rate_Benefit_info_with_confirmation__c</members>
+        <members>Opportunity.Reason_for_Shopping__c</members>
         <members>Opportunity.Requestor_to_Review_Documents__c</members>
         <members>Opportunity.Send_Contract_To__c</members>
+        <members>Opportunity.Stage_Number__c</members>
         <members>Opportunity.Subscriber_Count__c</members>
-        <members>OpportunityLineItem.Ancillary_Coverage_Code__c</members>
+        <members>Opportunity.Total_Annualized_USAble_Revenue__c</members>
+        <members>Opportunity.Total_Eligible_Employees__c</members>
+        <members>Opportunity.Total_Eligible_Members__c</members>
+        <members>Opportunity.Won_Reason__c</members>
+        <members>OpportunityLineItem.Annualized_Revenue__c</members>
+        <members>OpportunityLineItem.Annualized_Revenue_for_Rollup__c</members>
         <members>OpportunityLineItem.Billing_Group__c</members>
+        <members>OpportunityLineItem.Complementary_Coverage_Code__c</members>
         <members>OpportunityLineItem.Dental_Coverage_Code__c</members>
         <members>OpportunityLineItem.Drug_Coverage_Code__c</members>
         <members>OpportunityLineItem.Med_Coverage_Code__c</members>
+        <members>OpportunityLineItem.Missing_Required_Revenue__c</members>
+        <members>OpportunityLineItem.Missing_Required_Revenue_for_Rollup__c</members>
+        <members>OpportunityLineItem.PPP_Coverage_Code__c</members>
+        <members>OpportunityLineItem.Selected_By_Customer__c</members>
         <members>OpportunityLineItem.Vision_Coverage_Code__c</members>
         <members>User.Office__c</members>
+        <members>User.Run_Automation__c</members>
+        <members>User.Run_Validation__c</members>
         <name>CustomField</name>
     </types>
     <types>
+        <members>Validation_Rules_Opportunity_Closed_Won</members>
+        <name>CustomLabel</name>
+    </types>
+    <types>
         <members>AMS_App_Config__c</members>
+        <members>AMS_Error_Log__c</members>
+        <members>Account</members>
+        <members>Activity</members>
+        <members>Billing_Group_Opp_Product__c</members>
         <members>Billing_Group__c</members>
         <members>Billing_Product_Detail__c</members>
         <members>Billing_Product__c</members>
+        <members>Case</members>
         <members>Competitor_Details__c</members>
+        <members>Contact</members>
+        <members>Contract</members>
         <members>Coverage_Code__c</members>
+        <members>Event</members>
+        <members>Knowledge__kav</members>
+        <members>Lead</members>
+        <members>LinkedArticle</members>
+        <members>Opportunity</members>
+        <members>Product2</members>
+        <members>Task</members>
+        <members>User</members>
         <name>CustomObject</name>
     </types>
     <types>
+        <members>AMS_Error_Log__c</members>
         <members>Billing_Group__c</members>
         <members>Coverage_Code__c</members>
         <name>CustomTab</name>
     </types>
     <types>
-        <members>Public_Dashboards/fGXPlJEzdTcYaCDCEmeKsMufprJcJY</members>
-        <members>Public_Dashboards/gcqPfCHrpuTySxCMGdETOBBVnwSBML</members>
-        <members>Public_Dashboards/vuckiOyjokIqUYzdRFIfglKvEWidbH</members>
+        <members>AMS_Dashboards</members>
+        <members>AMS_Dashboards/fGXPlJEzdTcYaCDCEmeKsMufprJcJY2</members>
+        <members>AMS_Dashboards/fGXPlJEzdTcYaCDCEmeKsMufprJcJY22</members>
+        <members>Public_Dashboards</members>
         <name>Dashboard</name>
     </types>
     <types>
-        <members>Public</members>
-        <members>SalesTools</members>
-        <members>SharedDocuments</members>
-        <name>Document</name>
-    </types>
-    <types>
-        <members>*</members>
+        <members>Account.Standard_Account_Duplicate_Rule</members>
+        <members>Contact.Standard_Contact_Duplicate_Rule</members>
+        <members>Contact.Standard_Rule_for_Contacts_with_Duplicate_Leads</members>
+        <members>Lead.Standard_Lead_Duplicate_Rule</members>
+        <members>Lead.Standard_Rule_for_Leads_with_Duplicate_Contacts</members>
         <name>DuplicateRule</name>
     </types>
     <types>
-        <members>*</members>
+        <members>AMS_Home_Page</members>
+        <members>AMS_Internal_Case_Record_Page</members>
+        <members>AMS_Sales_UtilityBar</members>
+        <members>Account_Lightning_Page</members>
+        <members>Billing_Group_Record_Page</members>
+        <members>Billing_Product_Record_Page</members>
+        <members>Case_Record_Page1</members>
+        <members>Contact_Lightning_Record_Page</members>
+        <members>Event_Record_Page</members>
+        <members>Home_Page_Default</members>
+        <members>Lead_Lightning_Page</members>
+        <members>Opportunity_Record_Page</members>
+        <members>Opportunity_Record_Page1</members>
+        <members>Product_Record_Page_2_Column</members>
         <name>FlexiPage</name>
     </types>
     <types>
-        <members>Account_Processes-1</members>
-        <members>Opportunity_Processes-26</members>
-        <members>Opportunity_Product_Processes-4</members>
+        <members>AMS_Case_Processes-1</members>
+        <members>Account_Processes-18</members>
+        <members>Event_Processes-1</members>
+        <members>Opportunity_Processes-63</members>
+        <members>Opportunity_Product_Processes-10</members>
         <name>Flow</name>
     </types>
     <types>
-        <members>*</members>
+        <members>COBRA_Admin</members>
+        <members>Competitor</members>
+        <members>Coverage_Code_Type</members>
+        <members>Customer_Type</members>
+        <members>Domestic_Partnership_Allowed</members>
+        <members>Funding_Mechanism</members>
+        <members>Funding_Type</members>
+        <members>Health_Check</members>
+        <members>Island</members>
+        <members>Market_Segment</members>
+        <members>Months</members>
+        <members>Retro_Cancellation_Allowance</members>
+        <members>SAS_Fulfillment_Type</members>
+        <members>Yes_No</members>
         <name>GlobalValueSet</name>
     </types>
     <types>
-        <members>Account-Account Layout</members>
+        <members>HPA_Team</members>
+        <members>SAS_Team</members>
+        <name>Group</name>
+    </types>
+    <types>
+        <members>AMS_Error_Log__c-AMS Error Log Layout</members>
         <members>Account-Agency Layout</members>
         <members>Account-Competitor Layout</members>
         <members>Account-Customer Layout</members>
         <members>Account-Prospect Layout</members>
+        <members>AccountTeamMember-Account Team Member Layout</members>
+        <members>Billing_Group_Opp_Product__c-Billing Group Opp Product Layout</members>
         <members>Billing_Group__c-Billing Group Layout</members>
         <members>Billing_Product_Detail__c-Billing Product Detail Layout</members>
         <members>Billing_Product__c-Billing Product Layout</members>
         <members>Case-Benefits Comparison Request</members>
+        <members>Case-Case Layout</members>
         <members>Case-Contract Request Layout</members>
+        <members>Case-Group Brochure Request</members>
+        <members>Case-Health Plan Advisor Request</members>
         <members>Case-SBC Request</members>
+        <members>Case-Self Insured Contract Request</members>
         <members>Competitor_Details__c-Competitor Offering Layout</members>
         <members>Contact-Contact Layout</members>
         <members>Coverage_Code__c-Coverage Code Layout</members>
+        <members>DuplicateRecordItem-Duplicate Record Item Layout</members>
         <members>Event-Event Layout</members>
+        <members>Event-HPA Event Layout</members>
         <members>Global-Global Layout</members>
         <members>Lead-Lead Layout</members>
+        <members>Opportunity-Closed New to Blue</members>
+        <members>Opportunity-Closed Renewal</members>
+        <members>Opportunity-New to Blue</members>
         <members>Opportunity-Opportunity Layout</members>
+        <members>Opportunity-Renewal</members>
         <members>OpportunityLineItem-Opportunity Product Layout</members>
         <members>Product2-Product Layout</members>
+        <members>Task-Task Layout</members>
+        <members>User-User Layout</members>
         <name>Layout</name>
     </types>
     <types>
+        <members>AMS_Error_Log__c.All</members>
         <members>Account.AllAccounts</members>
-        <members>Account.MyAccounts</members>
+        <members>Account.My_Accounts</members>
         <members>Account.My_Customers</members>
         <members>Account.My_Prospects</members>
+        <members>Account.NewThisWeek</members>
         <members>Account.Org_Account_Hierarchy</members>
+        <members>Billing_Group__c.All</members>
+        <members>Case.AllOpenCases</members>
         <members>Case.Contract_Creation_Requests</members>
+        <members>Case.MyCases</members>
+        <members>Case.MyOpenCases</members>
         <members>Case.Open_Benefit_Comparison_Requests</members>
+        <members>Case.Open_Group_Brochure_Requests</members>
+        <members>Case.Open_HPA_Requests</members>
         <members>Case.Open_SBC_Creation_Requests</members>
+        <members>Case.Queue_HPA_Team_Case</members>
         <members>Case.SAS_Team_Case</members>
         <members>Contact.My_Contacts</members>
-        <members>Lead.Individual_Lead</members>
-        <members>Lead.Large_Group_Lead</members>
-        <members>Lead.My_Leads</members>
+        <members>Coverage_Code__c.Active_Replacements</members>
+        <members>Coverage_Code__c.All</members>
+        <members>DuplicateRecordSet.Account_Aug_6_2018_11_41_AM</members>
+        <members>DuplicateRecordSet.Contact_Aug_6_2018_3_10_PM</members>
+        <members>Lead.AllOpenLeads</members>
+        <members>Lead.MyUnreadLeads</members>
         <members>Lead.My_Open_Leads</members>
+        <members>Lead.Open_Employer_Association_Leads</members>
+        <members>Lead.Open_Union_Trust_Fund_Leads</members>
+        <members>Lead.Queue_Individual_Lead</members>
+        <members>Lead.Queue_Large_Group_Lead</members>
         <members>Lead.Small_Group_Lead</members>
+        <members>Lead.TodaysLeads</members>
         <members>Opportunity.AllOpportunities</members>
         <members>Opportunity.ClosingNextMonth</members>
         <members>Opportunity.ClosingThisMonth</members>
@@ -223,20 +511,33 @@
         <members>Opportunity.Won</members>
         <members>Product2.Active_Products</members>
         <members>Product2.AllProducts</members>
+        <members>User.ActiveUsers</members>
+        <members>User.AllUsers</members>
         <name>ListView</name>
     </types>
     <types>
-        <members>*</members>
+        <members>Lead_Path</members>
+        <members>New_to_Blue_Opportunity</members>
+        <members>Product_Change_Opportunity</members>
+        <members>Renewal_Opportunity</members>
+        <members>Win_Back_Opportunity</members>
         <name>PathAssistant</name>
     </types>
     <types>
         <members>AMS Account Manager</members>
+        <members>AMS Management</members>
         <members>Admin</members>
+        <members>Data Integration</members>
+        <members>Standard</members>
         <members>System Admin</members>
         <name>Profile</name>
     </types>
     <types>
-        <members>*</members>
+        <members>HPA_Team</members>
+        <members>Individual</members>
+        <members>Large_Group</members>
+        <members>SAS_Team</members>
+        <members>Small_Group</members>
         <name>Queue</name>
     </types>
     <types>
@@ -244,8 +545,11 @@
         <members>Account.Quick_Product_Change</members>
         <members>Account.Quick_Renewal</members>
         <members>Account.Quick_Win_Back</members>
+        <members>Case.New_HPA_Event</members>
         <members>LogACall</members>
+        <members>NewEvent</members>
         <members>NewTask</members>
+        <members>SendEmail</members>
         <name>QuickAction</name>
     </types>
     <types>
@@ -255,8 +559,18 @@
         <members>Account.Prospect</members>
         <members>Case.Benefits_Comparison_Request</members>
         <members>Case.Contract_Request</members>
+        <members>Case.Group_Brochure_Request</members>
+        <members>Case.Health_Plan_Advisor_Request</members>
         <members>Case.SBC_Request</members>
+        <members>Case.Self_Insured_Contract_Request</members>
+        <members>Event.AMS_Event</members>
+        <members>Event.HPA_Event</members>
+        <members>Lead.Sales</members>
         <members>Opportunity.Assumptive_Renewal</members>
+        <members>Opportunity.Closed_New_to_Blue</members>
+        <members>Opportunity.Closed_Product_Changes</members>
+        <members>Opportunity.Closed_Renewal</members>
+        <members>Opportunity.Closed_Win_Back</members>
         <members>Opportunity.New_to_Blue</members>
         <members>Opportunity.Product_Change</members>
         <members>Opportunity.Renewal</members>
@@ -265,19 +579,55 @@
         <name>RecordType</name>
     </types>
     <types>
-        <members>*</members>
+        <members>Salesforce_API</members>
         <name>RemoteSiteSetting</name>
     </types>
     <types>
+        <members>AMS_Reports</members>
+        <members>AMS_Reports/Completed_Events</members>
+        <members>AMS_Reports/HPA_Cases_with_Events_Report_T4N</members>
+        <members>AMS_Reports/Opportunities_Open_and_Won</members>
+        <members>AMS_Reports/Opportunities_Won_New_and_Win_Back</members>
+        <members>AMS_Reports/Opportunities_Won_Renewal_and_Change</members>
+        <members>AMS_Reports/Opportunities_Won_Renewal_and_Change1</members>
+        <members>AMS_Reports/Opportunities_in_Jeopardy_Product_Change</members>
+        <members>AMS_Reports/Opportunities_in_Jeopardy_Product_New_Win_Back</members>
+        <members>AMS_Reports/Opportunities_in_Jeopardy_Renewal_Chg</members>
+        <members>AMS_Reports/Opportunity_Lost_Product_Change</members>
+        <members>AMS_Reports/Opportunity_Lost_Renewal_and_Change</members>
+        <members>AMS_Reports/Opportunity_Pipeline11</members>
+        <members>AMS_Reports/Opportunity_Pipeline111</members>
+        <members>AMS_Reports/Opportunity_Pipeline_Product_Changes</members>
+        <members>AMS_Reports/Opportunity_Pipeline_Renewal_Product_C</members>
+        <members>AMS_Reports/SAS_Cases_All_P2J</members>
+        <members>AMS_Reports/USAble_Lost_New_and_Win_Back</members>
+        <members>AMS_Reports/USAble_Lost_Product_Change</members>
+        <members>AMS_Reports/USAble_Lost_Renewal</members>
+        <members>AMS_Reports/USAble_Pipeline_New_and_Win_Back</members>
+        <members>AMS_Reports/USAble_Pipeline_Product_Change</members>
+        <members>AMS_Reports/USAble_Pipeline_Renewal</members>
+        <members>AMS_Reports/USAble_Won_New_and_Win_Back</members>
+        <members>AMS_Reports/USAble_Won_Product_Changes</members>
+        <members>AMS_Reports/USAble_Won_Renewal</members>
+        <members>AMS_Reports/USAble_in_Jeopardy_New_Win_Back</members>
+        <members>AMS_Reports/USAble_in_Jeopardy_Product_Change</members>
+        <members>AMS_Reports/USAble_in_Jeopardy_Renewal</members>
+        <members>Best_Practice_Service_Reports/Copy_of_of_Leads_with_Dates</members>
+        <members>Best_Practice_Service_Reports/Open_Leads_by_Owner</members>
+        <members>Best_Practice_Service_Reports/of_Leads_with_Dates</members>
+        <members>Sales_Marketing_Dashboard_Reports/Opportunities_for_Sales_Ops</members>
+        <members>Sales_Marketing_Dashboard_Reports/Opportunities_in_Jeopardy_New_Win_Back</members>
         <members>unfiled$public/Accounts_No_Activity_90_Days</members>
+        <members>unfiled$public/Accounts_No_Activity_for_90_Days</members>
         <members>unfiled$public/Current_Total_New_Sales_Members</members>
         <members>unfiled$public/Current_Total_Renewal_Sales_Members</members>
+        <members>unfiled$public/My_Activities_Last_30_Days</members>
         <members>unfiled$public/My_Activities_Last_4_Months</members>
         <members>unfiled$public/New_Opportunities_By_Stage</members>
         <members>unfiled$public/New_Opportunities_by_Stage_Team</members>
         <members>unfiled$public/Open_Opportunity_Pipeline_New</members>
+        <members>unfiled$public/Opportunities_By_Stage_Current_FQ</members>
         <members>unfiled$public/Opportunities_in_Jeopardy</members>
-        <members>unfiled$public/Opportunity_Pipeline</members>
         <members>unfiled$public/Renewal_Opportunities_By_Stage</members>
         <members>unfiled$public/Renewal_Opportunities_By_Stage_Team</members>
         <members>unfiled$public/Total_Annual_Sales</members>
@@ -285,44 +635,110 @@
     </types>
     <types>
         <members>Accounts</members>
-        <members>Accounts_with_Billing_Groups_with_Billing_Products</members>
-        <members>Accounts_with_Billing_Groups_with_Billing_Products_with_Billing_Product_Covera</members>
+        <members>HPA_Cases_with_Events</members>
         <members>Related_Accounts</members>
         <members>Related_Contacts</members>
         <members>Related_Contacts_with_or_without_activity</members>
         <name>ReportType</name>
     </types>
     <types>
-        <members>*</members>
+        <members>CEO</members>
+        <members>Commercial_Sales_Team</members>
+        <members>Corp_Sales_Team</members>
+        <members>Director_Sales_Strategic</members>
+        <members>EUTF_Sales_Team</members>
+        <members>Manager_Sales_Commercial</members>
+        <members>Manager_Sales_EUTF</members>
+        <members>Manager_Sales_National</members>
+        <members>Manager_Sales_Union</members>
+        <members>National_Sales_Team</members>
+        <members>Sales_Executive</members>
+        <members>Sr_Manager_Corp_Accts</members>
+        <members>Strategic_Sales_Team</members>
+        <members>Union_Sales_Team</members>
         <name>Role</name>
     </types>
     <types>
+        <members>Case.HPA_Team_R_W_HPA_Case</members>
+        <members>Case.SAS_Team_R_W_SAS_Case</members>
+        <name>SharingCriteriaRule</name>
+    </types>
+    <types>
+        <members>AccountContactMultiRoles</members>
+        <members>CaseStatus</members>
+        <members>ContactRole</members>
+        <members>EventSubject</members>
         <members>EventType</members>
+        <members>Industry</members>
+        <members>LeadSource</members>
         <members>OpportunityStage</members>
         <members>OpportunityType</members>
+        <members>Salutation</members>
         <members>TaskType</members>
         <name>StandardValueSet</name>
     </types>
     <types>
+        <members>TestAccountContactsResponse</members>
+        <members>TestAccountDescribeResponse</members>
+        <members>TestAccountDetailsResponse</members>
+        <members>TestAccountLayoutResponse</members>
+        <name>StaticResource</name>
+    </types>
+    <types>
+        <members>Billing_Group__c.Lock_Group_Number</members>
+        <members>Coverage_Code__c.Date_cannot_be_less_than_Start_Date</members>
         <members>Lead.Customer_Type_Required_on_Conversion</members>
         <members>Opportunity.Base_Default_Plan_Explanation_Required</members>
-        <members>Opportunity.Confirm_Contract_Sending_Method_on_Won</members>
-        <members>Opportunity.Confirm_Rating_info_on_Close_Won</members>
-        <members>Opportunity.Confirm_SBC_Request_on_Close_Won</members>
-        <members>Opportunity.Contract_Type_Required</members>
+        <members>Opportunity.Funding_Mechanism_Required</members>
+        <members>Opportunity.Funding_Type_Required</members>
+        <members>Opportunity.Locked_Name_if_Opp_is_Closed</members>
+        <members>Opportunity.Locked_Stage_if_Opp_is_Closed</members>
+        <members>Opportunity.Locked_if_Opp_is_Closed</members>
+        <members>Opportunity.Lost_Reason_Required_for_Closed_Lost</members>
         <members>Opportunity.Must_be_Closed_Lost_Stage</members>
         <members>Opportunity.Only_1_Contribution_Strategy</members>
+        <members>Opportunity.PPA_Needs_Effective_Date</members>
+        <members>Opportunity.PPA_Needs_Effective_End_Date</members>
+        <members>Opportunity.Quoting_Needs_At_Least_1_Product</members>
+        <members>Opportunity.Quoting_Needs_Current_Challenges</members>
+        <members>Opportunity.Quoting_Needs_Employee_Count</members>
+        <members>Opportunity.Won_Need_Rating_info</members>
+        <members>Opportunity.Won_Needs_Contract_Sending_Method</members>
+        <members>Opportunity.Won_Needs_Contract_Type</members>
+        <members>Opportunity.Won_Needs_Fulfillment_Type</members>
+        <members>Opportunity.Won_Needs_GPA_Notice_Contact</members>
+        <members>Opportunity.Won_Needs_Opp_Product</members>
+        <members>Opportunity.Won_Needs_Revenue</members>
+        <members>Opportunity.Won_Needs_Send_Contract_To</members>
+        <members>Opportunity.Won_Needs_Won_Reason</members>
+        <members>OpportunityLineItem.Cant_Create_or_Edit_if_Closed_Opp</members>
         <name>ValidationRule</name>
     </types>
     <types>
+        <members>Account.Documentum</members>
         <members>Account.MicroStrategy_AMS_Dashboard</members>
         <members>Account.Strategic_Account_Plan_Template</members>
         <members>Opportunity.National_Account_Cede_Notification_Template</members>
         <name>WebLink</name>
     </types>
     <types>
-        <members>Opportunity</members>
-        <name>Workflow</name>
+        <members>Billing_Group__c.Billing_Group_Set_Customer_Record_Type</members>
+        <members>Billing_Group__c.Set_Default_Group_Number</members>
+        <members>Event.Event_Set_Activity_Type</members>
+        <members>Event.Event_Set_Subject_Default</members>
+        <members>Event.Set_HPA_Description</members>
+        <members>Opportunity.Oppty_Default_Renewal_Date</members>
+        <name>WorkflowFieldUpdate</name>
+    </types>
+    <types>
+        <members>Billing_Group__c.Billing Group%3A Set Customer Record Type</members>
+        <members>Billing_Group__c.Set Default Group Number</members>
+        <members>Event.Event%3A Set Activity Type</members>
+        <members>Event.Event%3A Set Subject Default</members>
+        <members>Event.Set HPA Description</members>
+        <members>Opportunity.Oppty%3A Default Renewal Date</members>
+        <name>WorkflowRule</name>
     </types>
     <version>42.0</version>
 </Package>
+

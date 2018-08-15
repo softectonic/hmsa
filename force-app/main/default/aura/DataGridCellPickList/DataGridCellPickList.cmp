@@ -1,4 +1,18 @@
 <aura:component extends="c:DataGridCell">
+    
+<!--====================================================
+	Name:  DataGridCellPickList Component                       
+	====================================================
+	Purpose:                                           
+	Sub component for Group Product Mgmt custom
+	component.                                           
+	====================================================
+ 	History:                                                                                        
+	VERSION    AUTHOR     DATE     DETAIL    DESCRIPTION 
+	1.0        aashiru    07/2018  Created             
+                                                     
+	====================================================-->     
+    
     <aura:if isTrue="{!v.displayMode == 'read'}">
         <ui:outputText aura:id="outputCell" value="{!v.value}"/>
         <aura:set attribute="else">

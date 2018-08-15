@@ -1,0 +1,102 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId"
+                controller="ProductListController"
+                access="global">
+    
+<!--====================================================
+	Name:  DataGridCellMultiSelect Component                       
+	====================================================
+	Purpose:                                           
+	Multi-select picklist of Billing Groups in the  
+	Group Product Mgmt custom component.                                            
+	====================================================
+ 	History:                                                                                        
+	VERSION    AUTHOR     DATE     DETAIL    DESCRIPTION 
+	1.0        aashiru    07/2018  Created             
+                                                     
+	====================================================-->
+    
+  <aura:attribute name="options" type="Object[]" />
+  <aura:attribute name="selectedItems" type="Object[]" />
+  <aura:attribute name="initialSelectedLabels" type="Object[]"/>
+  <aura:attribute name="initialSelectedValues" type="Object[]"/>  
+  <aura:attribute name="lastSelectedItems" type="Object[]" />
+  <aura:attribute name="lastSelectedItemsIndex" type="Integer"/>
+  <aura:attribute name="item" type="Object"/>
+  <aura:attribute name="itemId" type="String"/>  
+  <aura:attribute name="itemRank" type="Integer"/>
+  <aura:attribute name="column" type="Object"/>    
+  <aura:attribute name="columnRank" type="Integer"/>  
+  <aura:attribute name="infoText" type="String" default="Select an Option" />
+  <aura:attribute name="label" type="String" default="" />
+  <aura:attribute name="value" type="String" default="" />
+  <aura:attribute name="values" type="Object[]" default="" />
+  <aura:attribute name="labels" type="Object[]" default="" />
+  <aura:attribute name="variant" type="String" default="" description="to hide label, add 'label-hidden' as a variant" />
+  <aura:attribute name="width" type="String" default="240px;" />
+  <aura:attribute name="dropdownLength" type="Integer" default="5" />
+  <aura:attribute name="displayMode" type="String" />
+  <aura:attribute name="hasErrors" type="Boolean"/>
+  <aura:attribute name="errors" type="Object[]"/>  
+
+  <aura:registerEvent name="selectChange" type="c:SelectedRecordsEvent" />
+  <aura:registerEvent name="showModal" type="c:ShowModalEvent"/> 
+  <aura:registerEvent name="newBillingGroup" type="c:NewBillingGroupEvent" />   
+
+  <aura:method name="reInit" action="{!c.reInit}" description="Allows the lookup to be reinitalized"></aura:method>
+  <aura:handler name="init" value="{!this}" action="{!c.init}" />
+
+  <aura:attribute name="dropdownOver" type="Boolean" default="false" />
+  <aura:attribute name="initialized" type="Boolean" default="false" />
+  <aura:attribute name="options_" type="Object[]" />
+
+  <td aura:id="cellContainer" data-label="{!v.label}">  
+  	<aura:if isTrue="{!v.displayMode == 'read'}">
+    	<ui:outputText aura:id="outputCell" value="{!v.value}"/> 
+    	<aura:set attribute="else">
+      	<div class="slds-form-element" style="{!'width:' + v.width}">
+        	<div class="slds-form-element__control">
+          		<div class="slds-combobox_container">
+            		<div aura:id="main-div" class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+              			<div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                			<input aura:id="multi-select-input-{!v.itemRank}" type="text" class="slds-input slds-combobox__input" id="combobox-id-1" aria-controls="listbox-id-1" autoComplete="off" role="textbox" placeholder="{!v.infoText}" readonly="{!v.displayMode == 'read'}" onclick="{!c.handleClick}" onmouseleave="{!c.handleMouseOutButton}" />
+                			<span class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right">
+                  				<lightning:icon iconName="utility:down" size="x-small" class="slds-icon slds-icon slds-icon_x-small slds-icon-text-default" />
+                			</span>
+              			</div>
+              			<div class="{!'slds-dropdown  slds-dropdown_fluid slds-dropdown_length-' + v.dropdownLength}" onmouseenter="{!c.handleMouseEnter}" onmouseleave="{!c.handleMouseLeave}" role="listbox">
+                			<ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                                 <li role="presentation" class="slds-listbox__item" onclick="{!c.showModal}">
+                                	<span id="listbox-option-unique-id-01" class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+                                    	<span class="slds-media__figure">
+                          					<span class="slds-icon_container" title="Description of icon when needed">
+                            					<lightning:icon iconName="utility:add" class="slds-icon slds-icon_small" size="x-small" alternativeText="icon"/>
+                            					<span class="slds-assistive-text">Create Billing Group</span>
+                          					</span>
+                      					</span>
+                      					<span class="slds-media__body" style="padding: 4px;">
+                          					<span class="slds-listbox__option-text slds-listbox__option-text_entity">New Billing Group</span>
+                      					</span>
+                					</span>
+            					</li>    
+                  				<aura:iteration items="{!v.options_}" var="option">
+                    			<li class="slds-listbox__item" role="presentation" onclick="{!c.handleSelection}" data-value="{!option.value}" data-selected="{!option.selected}">
+                      			<div class="{!' slds-media  slds-listbox__option_plain slds-media_small slds-listbox__option ' + (option.selected == true ? ' slds-is-selected' : '')}" role="option">
+                        			<span class="slds-media__figure">
+                          				<lightning:icon iconName="utility:check" size="x-small" class="slds-icon-utility-check slds-current-color slds-listbox__icon-selected slds-icon_container" />
+                        			</span>
+                        			<span class="slds-media__body">
+                          				<span class="slds-truncate" title="{!option.label}">&nbsp;{!option.label}</span>
+                        			</span>
+                      			</div>
+                    			</li>
+                  				</aura:iteration>
+                			</ul>
+              			</div>
+            		</div>
+          		</div>
+        	</div>
+      	</div>
+   		</aura:set>
+  	</aura:if>
+  </td> 
+</aura:component>

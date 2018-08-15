@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Administrative Assistant</fullName>
+        <default>false</default>
+        <label>Administrative Assistant</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Authorized Contact</fullName>
+        <default>false</default>
+        <label>Authorized Contact</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Authorized HR Contact (Eligibility, Enrollment)</fullName>
+        <default>false</default>
+        <label>Authorized HR Contact (Eligibility, Enrollment)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Authorized Signer</fullName>
+        <default>false</default>
+        <label>Authorized Signer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Billing Contact (Accounts Payable)</fullName>
+        <default>false</default>
+        <label>Billing Contact (Accounts Payable)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>CEO or Highest Local Exec</fullName>
+        <default>false</default>
+        <label>CEO or Highest Local Exec</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Consultant/Broker</fullName>
+        <default>false</default>
+        <label>Consultant/Broker</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Decision Maker</fullName>
+        <default>false</default>
+        <label>Decision Maker</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Event Coordinator</fullName>
+        <default>false</default>
+        <label>Event Coordinator</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Group Leader</fullName>
+        <default>false</default>
+        <label>Group Leader</label>
+    </standardValue>
+    <standardValue>
+        <fullName>HR Manager</fullName>
+        <default>false</default>
+        <label>HR Manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>HR Senior Exec</fullName>
+        <default>false</default>
+        <label>HR Senior Exec</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Legal Counsel (Labor/Mgmt)</fullName>
+        <default>false</default>
+        <label>Legal Counsel (Labor/Mgmt)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PEO – Professional Employer Organization</fullName>
+        <default>false</default>
+        <label>PEO – Professional Employer Organization</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Primary Contact</fullName>
+        <default>false</default>
+        <label>Primary Contact</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TPA – Third Party Administrator</fullName>
+        <default>false</default>
+        <label>TPA – Third Party Administrator</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Trust Fund Administrator</fullName>
+        <default>false</default>
+        <label>Trust Fund Administrator</label>
+    </standardValue>
+</StandardValueSet>

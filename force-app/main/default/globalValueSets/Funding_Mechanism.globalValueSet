@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Administrative Services Only (ASO)</fullName>
+        <default>false</default>
+        <label>Administrative Services Only (ASO)</label>
+    </customValue>
+    <customValue>
+        <fullName>Alternative Financial Method (AFM)</fullName>
+        <default>false</default>
+        <label>Alternative Financial Method (AFM)</label>
+    </customValue>
+    <customValue>
+        <fullName>Community Rated Group (CRG)</fullName>
+        <default>false</default>
+        <label>Community Rated Group (CRG)</label>
+    </customValue>
+    <customValue>
+        <fullName>Merit Rated Group (MRG)</fullName>
+        <default>false</default>
+        <label>Merit Rated Group (MRG)</label>
+    </customValue>
+    <customValue>
+        <fullName>Retro</fullName>
+        <default>false</default>
+        <label>Retro Rated Group (RRG)</label>
+    </customValue>
+    <customValue>
+        <fullName>EUTF</fullName>
+        <default>false</default>
+        <label>EUTF</label>
+    </customValue>
+    <customValue>
+        <fullName>Fed</fullName>
+        <default>false</default>
+        <label>Fed</label>
+    </customValue>
+    <description>The Funding Mechanism at the Account level indicates how the Groups included within it are being rated, or another key value that determines how they should be managed.</description>
+    <masterLabel>Funding Mechanism</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

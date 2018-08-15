@@ -1,3 +1,16 @@
+/*****************************************************************
+Name:  RestAPIUtils
+ 
+=================================================================
+Purpose: 
+Apex REST API utility methods                                                                                                                       
+=================================================================
+History                                                            
+-------                                                            
+VERSION  AUTHOR         DATE           DETAIL          Description
+1.0   	 aashiru        06/2018        Created         AMS: 
+*****************************************************************/
+
 public with sharing class RestAPIUtils {
     static public String SF_HOST = System.Url.getSalesforceBaseURL().toExternalForm();
     static public String QUERY_API_URL = SF_HOST + '/services/data/v41.0/tooling/query/?q=';

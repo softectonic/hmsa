@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Aetna</fullName>
+        <default>false</default>
+        <label>Aetna</label>
+    </customValue>
+    <customValue>
+        <fullName>Delta Dental</fullName>
+        <default>false</default>
+        <label>Delta Dental</label>
+    </customValue>
+    <customValue>
+        <fullName>HDS</fullName>
+        <default>false</default>
+        <label>HDS</label>
+    </customValue>
+    <customValue>
+        <fullName>HMAA</fullName>
+        <default>false</default>
+        <label>HMAA</label>
+    </customValue>
+    <customValue>
+        <fullName>Kaiser</fullName>
+        <default>false</default>
+        <label>Kaiser</label>
+    </customValue>
+    <customValue>
+        <fullName>UHA</fullName>
+        <default>false</default>
+        <label>UHA</label>
+    </customValue>
+    <customValue>
+        <fullName>VSP</fullName>
+        <default>false</default>
+        <label>VSP</label>
+    </customValue>
+    <masterLabel>Competitor</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>HPA_Team_R_W_HPA_Case</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Give the members of the HPA Team Public Group Read / Write access to Cases of their record type.</description>
+        <label>HPA Team R/W HPA Case</label>
+        <sharedTo>
+            <group>HPA_Team</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Health Plan Advisor Request</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SAS_Team_R_W_SAS_Case</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Gives the members of the SAS Team Public Group Read / Write to all of their Case Record Types.</description>
+        <label>SAS Team R/W SAS Case</label>
+        <sharedTo>
+            <group>SAS_Team</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>SBC Request,Benefits Comparison Request,Group Brochure Request,Self-Insured Contract Request,Fully Insured Contract Request</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

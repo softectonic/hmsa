@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Group</fullName>
+        <default>false</default>
+        <label>Group Sponsored</label>
+    </customValue>
+    <customValue>
+        <fullName>HMSA</fullName>
+        <default>false</default>
+        <label>HMSA Administered</label>
+    </customValue>
+    <masterLabel>COBRA Admin</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

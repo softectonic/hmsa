@@ -1,3 +1,16 @@
+/*****************************************************************
+Name:  OpportunityRenewalClosedBatch
+ 
+=================================================================
+Purpose: 
+Batch process for automatic close of Opportunity 	                                                                                                                     
+=================================================================
+History                                                            
+-------                                                            
+VERSION  AUTHOR         DATE           DETAIL          Description
+1.0   	 aashiru        06/2018        Created         AMS: 
+*****************************************************************/
+
 global class OpportunityRenewalClosedBatch implements Database.Batchable<sObject> {
     
     String query;
@@ -38,19 +51,14 @@ global class OpportunityRenewalClosedBatch implements Database.Batchable<sObject
             accountIds.add(iterGroup.Account__c);
         }
         if(!accountIds.IsEmpty()) {
-            List<Opportunity> opps = [SELECT Id, Name, AccountId, StageName, RecordType.Name FROM Opportunity];
-            System.debug('###Opps: '+opps);
-            System.debug('###RecordType Name: '+opps[0].RecordType.Name);
-            System.debug('###oppRecTypeId: '+oppRecTypeId);
-            System.debug('###accountIds: '+accountIds);
-
+           
             List<Opportunity> oppList = [SELECT Id, Name, AccountId, StageName, RecordTypeId 
                                             FROM Opportunity 
                                             WHERE StageName <> 'Closed Won'
                                             AND RecordType.Name = : 'Assumptive Renewal'
                                             AND AccountId IN : accountIds];
 
-            System.debug('###oppList: '+oppList);
+            //System.debug('###oppList: '+oppList);
             if(oppList != null && !oppList.isEmpty()) {
 
                 for(Opportunity opp : oppList) {

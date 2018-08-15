@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Lead</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>Lead Path</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;Once the Lead is qualified, click on the Convert button in the upper right hand corner to convert the lead to a Prospect.&lt;/li&gt;&lt;li&gt;If the Lead cannot be qualified and would like to remove the Lead record, click on the &amp;quot;Unqualified&amp;quot; stage and click on &amp;quot;Mark Status as complete&amp;quot;.&lt;/li&gt;&lt;li&gt;Or you can leave your Lead in an &amp;quot;Open&amp;quot; status until further definitive action can be taken.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Open</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

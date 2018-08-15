@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Competitor_Details__c</fullName>
+        <description>Capture the products details and rates from the current competitor(s)</description>
+        <encrypted>false</encrypted>
+        <externalId>false</externalId>
+        <inlineHelpText>Capture the products details and rates from the current competitor(s)</inlineHelpText>
+        <label>Competitor Details</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Competitor__c</fullName>
+        <externalId>false</externalId>
+        <label>Competitor</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Competitor</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The Opportunity for which this Competitor Offering relates.</inlineHelpText>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Competitor Offerings</relationshipLabel>
+        <relationshipName>Competitor_Offerings</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Ancillary</fullName>
+                    <default>false</default>
+                    <label>Ancillary</label>
+                </value>
+                <value>
+                    <fullName>Dental </fullName>
+                    <default>false</default>
+                    <label>Dental </label>
+                </value>
+                <value>
+                    <fullName>Drug </fullName>
+                    <default>false</default>
+                    <label>Drug </label>
+                </value>
+                <value>
+                    <fullName>HMO</fullName>
+                    <default>false</default>
+                    <label>Med HMO</label>
+                </value>
+                <value>
+                    <fullName>PPO</fullName>
+                    <default>false</default>
+                    <label>Med PPO</label>
+                </value>
+                <value>
+                    <fullName>TDI </fullName>
+                    <default>false</default>
+                    <label>TDI </label>
+                </value>
+                <value>
+                    <fullName>Vision </fullName>
+                    <default>false</default>
+                    <label>Vision </label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Won__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>check box to indicate if this competitor won the opportunity with this offering.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this box if a competitor won the Opportunity with this offering.</inlineHelpText>
+        <label>Won?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Competitor Offering</label>
+    <nameField>
+        <displayFormat>{000000}</displayFormat>
+        <label>Competitor Offering Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Competitor Offerings</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

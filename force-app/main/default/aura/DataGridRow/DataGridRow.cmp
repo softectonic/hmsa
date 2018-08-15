@@ -1,27 +1,48 @@
 <aura:component implements="forceCommunity:availableForAllPageTypes,force:hasRecordId" 
                 controller="ProductListController"
                 access="global">
+    
+<!--====================================================
+	Name:  DataGridRow Component                       
+	====================================================
+	Purpose:                                           
+	Sub component for Group Product Mgmt custom
+	component.                                           
+	====================================================
+ 	History:                                                                                        
+	VERSION    AUTHOR     DATE     DETAIL    DESCRIPTION 
+	1.0        aashiru    07/2018  Created             
+                                                     
+	====================================================-->    
+    
     <aura:attribute name="displayMode" type="String"/>
     <aura:attribute name="columns" type="Object[]"/>
-    
     <aura:attribute name="item" type="Object"/>
     <aura:attribute name="itemRank" type="Integer"/>
-    
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />    
-    <aura:registerEvent name="onDelete" type="c:DataGridEvent"/>
+    <aura:attribute name="options" type="Object[]" />
+    <aura:attribute name="optionsList" type="Object[]" />
+    <aura:attribute name="selectedItems" type="Object[]" />
+    <aura:attribute name="initialSelectedLabels" type="Object[]" />
+    <aura:attribute name="initialSelectedValues" type="Object[]" />
+    <aura:attribute name="lastSelectedItems" type="Object[]" />
+    <aura:attribute name="lastSelectedItemsIndex" type="Integer"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />   
+	<aura:registerEvent name="onDelete" type="c:DataGridEvent"/>
     <aura:registerEvent name="onEdit" type="c:DataGridEvent"/>
     
     <tr>
         {!v.body}
-         <aura:if isTrue="{!v.displayMode != 'read'}">
+        <!--
+        <aura:if isTrue="{!v.displayMode != 'read'}">
              <td class="actions">
                  <lightning:buttonMenu alternativeText="Actions" 
                                        iconSize="x-small"
                                        onselect="{!c.handleMenuSelect}">
                      <lightning:menuItem label="Delete" value="delete" />
-                     <!--lightning:menuItem label="Edit" value="edit"/-->                
+                     lightning:menuItem label="Edit" value="edit"/>               
                  </lightning:buttonMenu>
              </td>
         </aura:if>
+		-->
     </tr>            
 </aura:component>

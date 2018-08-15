@@ -1,32 +1,93 @@
-<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId">
-    <lightning:layout >
-        <lightning:layoutItem padding="around-small" size="6">
-    		<div aria-labelledby="newgroupform">
-        		<fieldset class="slds-box slds-theme--default slds-container--small">
-        			<legend id="newgroupform" class="slds-text-heading--small slds-p-vertical--medium">
-          				Add Billing Group
-        			</legend>
-        			<lightning:recordEditForm aura:id="recordEditForm" objectApiName="Billing_Group__c"> 
-                    	<lightning:messages />
-                    	<div class="slds-grid">
-                            <div class="slds-col slds-size_1-of-2">
-            					<lightning:inputField fieldName="Name" />
-                            	<lightning:inputField fieldName="Employee_Count__c" />
-								<lightning:inputField fieldName="Subscriber_Count__c" />
-                            	<lightning:inputField fieldName="Member_Count__c" />
-                            	<lightning:inputField fieldName="Group_Status__c" />
-                   			</div>
-                  			<div class="slds-col slds-size_2-of-2">
-                            	<lightning:inputField fieldName="Account" />
-                            	<lightning:inputField fieldName="Group_Number__c" />
-								<lightning:inputField fieldName="Effective_Date__c" />
-                            	<lightning:inputField fieldName="Renewal_Date__c" />
-                        	</div>
-                 		 </div>
-                        <lightning:button class="slds-m-top_small" type="submit" label="Create record" />
-         			</lightning:recordEditForm>
-      			</fieldset>
-    		</div>
-        </lightning:layoutItem>
-    </lightning:layout>
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId"         
+                controller="ProductListController" 
+                access="global">
+    
+<!--====================================================
+	Name:  BillingGroup Component                       
+	====================================================
+	Purpose:                                           
+	Create New Billing Group from Group Product Mgmt 
+	custom component.                                            
+	====================================================
+ 	History:                                                                                        
+	VERSION    AUTHOR     DATE     DETAIL    DESCRIPTION 
+	1.0        aashiru    07/2018  Created             
+                                                     
+	====================================================--> 
+    
+    <!--Start Modal New Billing Group -->
+    <aura:attribute name="itemId" type="String"/>
+    <aura:attribute name="itemRank" type="Integer"/>
+    <aura:attribute name="groupObj" type="Billing_Group__c" default="{'sobjectType': 'Billing_Group__c',
+                         												'Name': '',
+                         												'Requested_Agent_Code__c': '',
+                         												'Requested_COBRA_Admin__c': '',
+                         												'Requested_Rating_Class__c': '',
+                                                                        'Domestic_Partnership_Allowed__c' : '',
+                                                                        'Employee_Count__c': '',
+                                                                        'Retro_Cancellation_Allowance__c': ''}" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+    <aura:handler event="c:NewBillingGroupEvent" action="{!c.setOpportunityProduct}"/> 
+    <aura:registerEvent name="closedModal" type="c:ClosedModalEvent"/> 
+    <aura:registerEvent name="hideModal" type="c:HideModalEvent"/> 
+    
+	<div class="demo-only" style="height: 640px;"> 
+      <section aura:id="newGroupModal" role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-describedby="modal-content-id-1" aria-hidden="false" class="slds-modal slds-fade-in-open hideDiv">
+        <div class="slds-modal__container">
+          <div class="slds-modal__header">
+             <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.hideModal}">
+                 <lightning:icon iconName="utility:close" size="small" variant="bare"/>
+                 <span class="slds-assistive-text">Close</span>
+             </button>      
+             <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">New Billing Group</h2>
+          </div>    
+          <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+           <div class="slds-form-element">
+              <div class="slds-form-element__control">
+                  <lightning:input type="Text" label="Group Name" aura:id="groupName" value="{!v.groupObj.Name}" required="true"  />
+              </div>
+            </div>
+            <div class="slds-form-element">
+              <div class="slds-form-element__control">
+                  <lightning:input type="Text" label="Requested Agent Code"  name="agentCode" value="{!v.groupObj.Requested_Agent_Code__c}" maxlength="4" />
+              </div>
+            </div>
+            <div class="slds-form-element">
+              <div class="slds-form-element__control">
+                  <ui:inputSelect label="Requested Rating Class" class="dynamic" aura:id="requestedRatingClass" value="{!v.groupObj.Requested_Rating_Class__c}" /> 
+              </div>
+            </div>
+            <div class="slds-form-element">
+        	  <div class="slds-form-element__control">
+            	<ui:inputSelect label="Requested COBRA Admin" class="dynamic" aura:id="requestedCobraAdmin" value="{!v.groupObj.Requested_COBRA_Admin__c}" /> 
+        	  </div>
+    	    </div>
+            <div class="slds-form-element">
+        	  <div class="slds-form-element__control">
+            	<ui:inputSelect label="Domestic Partnership Allowed?" class="dynamic" aura:id="domesticPartnershipAllowed" value="{!v.groupObj.Domestic_Partnership_Allowed__c}" /> 
+        	  </div>
+    	    </div>
+            <div class="slds-form-element">
+        	  <div class="slds-form-element__control">
+            	<ui:inputNumber label="Employee Count" aura:id="employeeCount" value="{!v.groupObj.Employee_Count__c}" /> 
+        	  </div>
+    	    </div>  
+          	<div class="slds-form-element">
+        	  <div class="slds-form-element__control">
+            	<ui:inputSelect label="Retro Cancellation Allowance" class="dynamic" aura:id="retroCancellationAllowance" value="{!v.groupObj.Retro_Cancellation_Allowance__c}" /> 
+        	  </div>
+    	    </div> 
+          </div>
+          
+          <footer class="slds-modal__footer">
+            <lightning:button label="Cancel" class="slds-button slds-button--neutral" onclick="{!c.closedModal}"/>
+            <lightning:button label="Save" class="slds-button slds-button--brand" onclick="{!c.saveBillingGroup}"/> 
+          </footer>
+        </div>
+      </section>
+      <div class="slds-backdrop slds-backdrop_open"></div>
+	</div>
+
+    <!--End Modal New Billing Group -->
 </aura:component>

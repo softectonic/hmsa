@@ -2,6 +2,20 @@
                 controller="ProductListController"
                 abstract="true"
                 access="global">
+    
+<!--====================================================
+	Name:  DataGridCell Component                       
+	====================================================
+	Purpose:                                           
+	Sub component for Group Product Mgmt custom
+	component.                                           
+	====================================================
+ 	History:                                                                                        
+	VERSION    AUTHOR     DATE     DETAIL    DESCRIPTION 
+	1.0        aashiru    07/2018  Created             
+                                                     
+	====================================================-->     
+    
     <aura:attribute name="item" type="Object"/>
     <aura:attribute name="itemRank" type="Integer"/>
     <aura:attribute name="column" type="Object"/>    

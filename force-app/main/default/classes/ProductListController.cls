@@ -1,3 +1,16 @@
+/*****************************************************************
+Name:  ProductListController
+ 
+=================================================================
+Purpose: 
+Apex Controller for Group Product Mgmt custom component                                                                                                                       
+=================================================================
+History                                                            
+-------                                                            
+VERSION  AUTHOR         DATE           DETAIL          Description
+1.0   	 aashiru        06/2018        Created         AMS: 
+*****************************************************************/
+
 public with sharing class ProductListController {
     
     public static Map<Schema.DisplayType, String> typesMap = new Map<Schema.DisplayType, String>();
@@ -19,7 +32,6 @@ public with sharing class ProductListController {
         typesMap.put(Schema.DisplayType.PICKLIST, 'PickList');
         typesMap.put(Schema.DisplayType.PHONE, 'Phone');
         typesMap.put(Schema.DisplayType.REFERENCE, 'Reference');
-        //typesMap.put(Schema.DisplayType.ID, 'Id');
         typesMap.put(Schema.DisplayType.URL, 'Url');       
     }
     
@@ -108,8 +120,10 @@ public with sharing class ProductListController {
     {
         Object[] columns = (Object[] )mRelatedListMetadata.get('columns');
         
+        /* 
         String groupJson = '{"field":"OpportunityLineItem.Billing_Group__c","fieldApiName":"Billing_Group__c","format":"null","label":"Billing Group","lookupId":"Id","name":"Billing_Group__c","refObjName":"Billing_Group__c"}';       
         columns.add( (Object)JSON.deserializeUntyped(groupJson));
+        */
         
         String relatedObjectName = (String)mRelatedListMetadata.get('sobject');        
         Schema.SObjectType relatedObjType = Schema.getGlobalDescribe().get(relatedObjectName);
@@ -131,8 +145,13 @@ public with sharing class ProductListController {
                 mColumn.put('refObjName', ((String)mColumn.get('field')).replace('.Name', ''));
                 if(mColumn.get('lookupId')!=null){
                     columnKey = ((String)mColumn.get('lookupId')).replace('.', '');
-                    //mColumn.put('name', columnKey); 
-                    mColumn.put('name', 'Name');     
+                    //mColumn.put('name', 'columnKey');  
+                    //mColumn.put('name', 'Name'); 
+                    if(columnKey == 'Id') {
+                        mColumn.put('name', 'ProductCode');
+                    } else {
+                        mColumn.put('name', columnKey);
+                    }
                 }
             }
             
@@ -171,7 +190,6 @@ public with sharing class ProductListController {
                         mColumn.put('calculatedType', mColumn.get('type')); 
                         mColumn.put('type', 'ItemLink');                           
                     }
-                    //System.debug('***mColumn: '+columnKey+' : '+mColumn); 
                 }
                 else {
                     columns.remove(i);
@@ -188,15 +206,15 @@ public with sharing class ProductListController {
             Map<String, Object> column = (Map<String, Object>) columns.get(j);
             String columnKey = (String)column.get('name'); 
   			if(columnKey == 'Quantity'
-               || columnKey == 'UnitPrice'
                || columnKey == 'ServiceDate'
-               || columnKey == 'ListPrice') {
+               || columnKey == 'ListPrice'
+               || columnKey == 'Annualized_Revenue__c') {
                   columns.remove(j); 
             } else {
     			j++;
   			}
 		}
-        //System.debug('***columns - required: '+columns); 
+        System.debug('***columns - required: '+columns); 
     }
     
     /**
@@ -349,8 +367,7 @@ public with sharing class ProductListController {
                     mItem.put(fieldKey, (String)valuesMap.get((String)mItem.get(fieldKey)));
                 }
             }             
-             
-            
+                         
             //Update the percent field 
             for(String fieldKey : percentFields.keySet()){                
                 for(Object item : items){                    
@@ -359,8 +376,7 @@ public with sharing class ProductListController {
 	                    mItem.put(fieldKey, (decimal)mItem.get(fieldKey)/100);
                     }
                 }
-            }  
-           
+            }         
             return items;                    
         }
                 
@@ -379,8 +395,7 @@ public with sharing class ProductListController {
         	return Database.query('Select Id, Name From ' + 
 	                              sobjectName + 
 	                              ' Where Id in :lookupIds');
-        }
-        
+        }      
         return null;                   
     }
     
@@ -388,11 +403,11 @@ public with sharing class ProductListController {
     * Save the related list items
     * */
     @AuraEnabled
-    public static Boolean saveRelatedListItems(String jsonData)
+    public static Boolean saveRelatedListItems(String jsonData, String initialData, String selectedData)
     {
         List<SObject> sObjectsItems = new List<SObject>();         
         Object[] items = (Object[])JSON.deserializeUntyped(jsonData);
-        
+       
         for(Object obj : items) {
             Map<String, Object> mObj = (Map<String, Object>)obj;
             
@@ -401,7 +416,7 @@ public with sharing class ProductListController {
             Schema.SObjectType objType = objId.getSobjectType();
             SObject sObj = objType.newSObject(objId);
             
-            //Create new Billing Group
+            /* Create new Billing Group
             if(mObj.containsKey('Billing_Group__c__New') && mObj.get('Billing_Group__c__New') != null ) {
                	OpportunityLineItem item = [SELECT OpportunityId, Opportunity.AccountId 
                                             FROM OpportunityLineItem 
@@ -416,7 +431,12 @@ public with sharing class ProductListController {
  						mObj.put('Billing_Group__c', billingGroup.Id);
 					}
               	}
-          	}
+          	} */
+
+            //Set Billing_Group__c to null
+            if(mObj.containsKey('Billing_Group__c') && mObj.get('Billing_Group__c') != null ) {
+                mObj.put('Billing_Group__c', null);
+            }
 
             for(String field : mObj.keySet()){
                 
@@ -447,7 +467,23 @@ public with sharing class ProductListController {
             }      
             sObjectsItems.add(sObj);
         }
-        update sObjectsItems;
+        try {
+            update sObjectsItems;
+
+            //Update Selected Billing Groups
+            updateSelectedBillingGroups(initialData, selectedData);
+
+        } 
+        catch (Exception e) {
+            /* AMS_ErrorLogger.logMessage('OpportunityListController.saveRelatedListItems','','', e.getMessage(), e.getStackTraceString()); */
+            System.debug(LoggingLevel.Error, 'ERROR! Class: ProductListController.saveRelatedListItems '+
+                                             'Message: '+e.getMessage() + ' '+
+                                             'StackTrace: '+e.getStackTraceString());
+            
+            throw new AuraHandledException(e.getMessage());                               
+            
+        }
+        /* finally {AMS_ErrorLogger.saveError();} */
         return true;
     } 
     
@@ -457,11 +493,10 @@ public with sharing class ProductListController {
     @AuraEnabled
 	public static Object[] getLookupCandidates(String refObjName, String searchTerm) {
 		String qname = '%' + searchTerm + '%';
-		
 		if(isSafeObject(refObjName) && isSafeField('Name', refObjName)){
 	        return Database.query('Select Id,Name From ' + 
 	        					  refObjName + 
-	            				  ' Where Name Like :qname order by createdDate DESC Limit 3');
+	            				  ' Where Name Like :qname order by createdDate DESC Limit 5');
 		}
 		
 		return null;
@@ -482,18 +517,18 @@ public with sharing class ProductListController {
 	        return (myField != null && myField.getDescribe().isAccessible());	    
 	}	
     
-    
+    /*
     @AuraEnabled
     public static Boolean deleteRelatedRecord(Id objectId){
         Schema.SObjectType sobjectType = objectId.getSObjectType();
         String sobjectName = sobjectType.getDescribe().getName();
         
         if(isSafeObject(sobjectName)) {
-            Database.DeleteResult result = Database.delete(objectId);            
+            Database.DeleteResult result = Database.delete(objectId);          
             return result.isSuccess();
         }
-        return False;
-    }
+        return false;
+    } */
     
     /**
     * Return the object details
@@ -543,7 +578,7 @@ public with sharing class ProductListController {
             }
             
             return item;                    
-        }
+        }   
                 
         return null;
     } 
@@ -584,8 +619,242 @@ public with sharing class ProductListController {
             insert relatedObject;            
             return relatedObject.Id;
         }
-        
         return null;
     } 
+
+
+    /**
+     * Get Billing Groups Dropdown Options
+     * */
+    @AuraEnabled
+    public static Object[] getBillingGroups(String objectId) {
+        
+        List<List<SelectItem>> optionsList = new List<List<SelectItem>>();
+        List<Opportunity> opps = [Select Id, AccountId From Opportunity Where Id = :objectId];
+        List<OpportunityLineItem> oppLineItems = [Select Id, OpportunityId From OpportunityLineItem Where OpportunityId = :opps[0].Id];
+        List<SelectItem> items = new List<SelectItem>();
+        if(opps != null) {
+            String accountId = opps[0].AccountId;
+            for(Billing_Group__c bg : Database.query('Select Id, Name, Full_Group_Number__c From Billing_Group__c ' +
+                                                     'Where (Group_Status__c = \'Active\' OR Group_Status__c = \'Pending\') ' +
+                                                     'And Account__c = :accountId ')) {
+                
+                SelectItem item = new SelectItem(bg.Id, bg.Name + ' ('+bg.Full_Group_Number__c+ ')');
+                items.add(item);
+            }    
+        }
+        //return items;  
+        if(oppLineItems != null) {
+            for(Integer i=0; i<oppLineItems.size(); i++) {
+                optionsList.add(items);
+            }
+        }
+        return optionsList;   
+    }
+
+    /**
+     * Get Selected Billing Groups
+     * */
+    @AuraEnabled
+    public static Object[] getSelectedBillingGroups(String objectId) {
+
+        List<SelectItem> items = new List<SelectItem>();
+        
+        for(Billing_Group_Opp_Product__c bgop : Database.query('Select Id, Billing_Group__c, Billing_Group__r.Name, ' +
+                                                                'Opportunity_Product_ID__c, Opportunity__c ' +
+                                                                'From Billing_Group_Opp_Product__c ' +
+                                                                'Where Opportunity__c = :objectId ' )) {
+            
+            SelectItem item = new SelectItem(bgop.Billing_Group__c, bgop.Billing_Group__r.Name, 
+                                                true, bgop.Opportunity_Product_ID__c, 
+                                                bgop.Opportunity__c, bgop.Id);
+            items.add(item);
+        }
+        return items;  
+    }
+
+    public class SelectItem {
+
+        @AuraEnabled public String  value  {get; set;}
+        @AuraEnabled public String  label  {get; set;}
+        @AuraEnabled public Boolean selected  {get; set;}
+        @AuraEnabled public String  product  {get; set;}
+        @AuraEnabled public String  opportunity  {get; set;}
+        @AuraEnabled public String  id  {get; set;}
+
+        public SelectItem( String value, String label) {
+            this.label = label;
+            this.value = value;
+            this.selected = false;
+        }
+
+        public SelectItem( String value, String label, Boolean selected, 
+                            String  product, String  opportunity, String  id) {
+            this(value, label);
+            this.selected = selected;
+            this.product = product;
+            this.opportunity = opportunity;
+            this.id = id;
+        }
+    }
+
+   /**
+    * Update the selected items
+    * */
+    private static void updateSelectedBillingGroups(String initialData, String selectedData)
+    {       
+        List<String> errors = new List<String>(); 
+        List<Billing_Group_Opp_Product__c> groupProductsForInsert = new List<Billing_Group_Opp_Product__c>();
+        List<Billing_Group_Opp_Product__c> groupProductsForDelete = new List<Billing_Group_Opp_Product__c>();
+        
+        if(selectedData != null) {
+            Object[] selectedItems = (Object[])JSON.deserializeUntyped(selectedData);
+        
+            for(Object obj : selectedItems) {
+                Map<String, Object> mObj = (Map<String, Object>)obj;
+                Billing_Group_Opp_Product__c groupProduct = new Billing_Group_Opp_Product__c();
+                groupProduct.Opportunity_Product_ID__c = (String)mObj.get('productid');
+                groupProduct.Billing_Group__c = (Id)mObj.get('groupid');
+                groupProduct.Opportunity__c = (Id)mObj.get('oppid');
+                groupProductsForInsert.add(groupProduct); 
+            }
+        }
+        if(initialData != null) {
+            Object[] initialItems = (Object[])JSON.deserializeUntyped(initialData);
+            for(Object obj : initialItems) {
+                Map<String, Object> mObj = (Map<String, Object>)obj;
+                Billing_Group_Opp_Product__c groupProduct2 = new Billing_Group_Opp_Product__c();
+                groupProduct2.Id = (Id)mObj.get('id');
+                groupProductsForDelete.add(groupProduct2);
+            }
+        }
+        
+        //Savepoint sp = Database.setSavepoint();
+        try {
+            if(!groupProductsForDelete.isEmpty()) {
+                Database.DeleteResult[] drList = Database.delete(groupProductsForDelete);
+                for(Database.DeleteResult dr : drList) {
+                    if (!dr.isSuccess()) {
+                        for(Database.Error err : dr.getErrors()) {
+                            /*AMS_ErrorLogger.logMessage('ProductListController.updateSelectedBillingGroups', 
+                                  				!err.getFields().isEmpty()?String.join(err.getFields(), ','):'', 
+                                  				err.getStatusCode()+'', 
+                                  				err.getMessage(),''); 
+                            Database.rollback(sp);*/
+                            throw new AMS_ErrorLogger.AMSException(err.getMessage());
+                        }
+					  
+                    }
+                }
+            }
+            if(!groupProductsForInsert.isEmpty()) {
+                List<Database.SaveResult> srList = Database.insert(groupProductsForInsert);
+                for (Database.SaveResult sr : srList) {
+                    if (!sr.isSuccess()) {
+                        // Operation failed, so throw all errors               
+                        for(Database.Error err : sr.getErrors()) {
+                            throw new AMS_ErrorLogger.AMSException(err.getMessage());
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception e) {
+           	/*AMS_ErrorLogger.logMessage('OpportunityRenewalHelper.updateSelectedBillingGroups','','', e.getMessage(), e.getStackTraceString());  
+            Database.rollback(sp);*/ 
+            System.debug(LoggingLevel.Error, 'ERROR! Method: OpportunityRenewalHelper.updateSelectedBillingGroups '+
+                                             'Message: '+e.getMessage() + ' '+
+                                             'StackTrace: '+e.getStackTraceString());
+            
+            throw new AMS_ErrorLogger.AMSException(e.getMessage());
+        }
+    }
+    
+    //Create new billing group records
+    @AuraEnabled
+    public static void createBillingGroup(Billing_Group__c billingGroup, String itemId) {
+        
+        if(billingGroup != null) {
+            try {
+                OpportunityLineItem item = [Select Id, OpportunityId, Opportunity.AccountId From OpportunityLineItem Where Id = :itemId Limit 1]; 
+                billingGroup.Account__c = item.Opportunity.AccountId;
+                Database.SaveResult sr = Database.insert(billingGroup, false);
+           
+                if (sr.isSuccess()) {
+              	    Billing_Group_Opp_Product__c groupProduct = new Billing_Group_Opp_Product__c();
+              	    groupProduct.Opportunity_Product_ID__c = itemId;
+            	    groupProduct.Billing_Group__c = sr.getId();
+            	    groupProduct.Opportunity__c = item.OpportunityId;
+                    Database.insert(groupProduct, false);    
+                } 
+                else {
+                    throw new AMS_ErrorLogger.AMSException(sr.getErrors()[0].getMessage());
+                }
+            }
+            catch (Exception e) {
+                System.debug(LoggingLevel.Error, 'ERROR! Class: ProductListController.createBillingGroup '+
+                                             'Message: '+e.getMessage() + ' '+
+                                             'StackTrace: '+e.getStackTraceString());
+                
+                throw new AuraHandledException(e.getMessage()); 
+            }
+
+        } 
+    }
+    
+    @AuraEnabled
+    public static List<String> getDomesticPartnershipAllowed(){
+        List<String> options = new List<String>();
+        Schema.DescribeFieldResult fieldResult = Billing_Group__c.Domestic_Partnership_Allowed__c.getDescribe();
+        List<Schema.PicklistEntry> pList = fieldResult.getPicklistValues();
+        for (Schema.PicklistEntry p: pList) {
+            options.add(p.getLabel());
+        }
+        return options;
+    }
+    
+    @AuraEnabled
+    public static List<String> getRequestedRatingClass(){
+        List<String> options = new List<String>();
+        Schema.DescribeFieldResult fieldResult = Billing_Group__c.Requested_Rating_Class__c.getDescribe();
+        List<Schema.PicklistEntry> pList = fieldResult.getPicklistValues();
+        for (Schema.PicklistEntry p: pList) {
+            options.add(p.getLabel());
+        }
+        return options;
+    }
+    
+    @AuraEnabled
+    public static List<String> getRequestedCobraAdmin(){
+        List<String> options = new List<String>();
+        Schema.DescribeFieldResult fieldResult = Billing_Group__c.Requested_COBRA_Admin__c.getDescribe();
+        List<Schema.PicklistEntry> pList = fieldResult.getPicklistValues();
+        for (Schema.PicklistEntry p: pList) {
+            options.add(p.getLabel());
+        }
+        return options;
+    }
+    
+    @AuraEnabled
+    public static List<String> getRetroCancellationAllowance(){
+        List<String> options = new List<String>();
+        Schema.DescribeFieldResult fieldResult = Billing_Group__c.Retro_Cancellation_Allowance__c.getDescribe();
+        List<Schema.PicklistEntry> pList = fieldResult.getPicklistValues();
+        for (Schema.PicklistEntry p: pList) {
+            options.add(p.getLabel());
+        }
+        return options;
+    }
+    
+    @AuraEnabled
+    public static List<SelectItem> getRequestedCobraAdminOptions(){
+        List<SelectItem> options = new List<SelectItem>();
+        Schema.DescribeFieldResult fieldResult = Billing_Group__c.Requested_COBRA_Admin__c.getDescribe();
+        List<Schema.PicklistEntry> pList = fieldResult.getPicklistValues();
+        for (Schema.PicklistEntry p: pList) {
+            options.add(new SelectItem(p.getValue(), p.getLabel()));
+        }
+        return options;
+    }
 
 }

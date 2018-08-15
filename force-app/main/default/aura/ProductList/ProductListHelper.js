@@ -22,7 +22,7 @@
         //Apply the shadow on the grid
         this.applyShadowEffect(component, event);
         
-        //Toogle the edit button
+	    //Toogle the edit button
         this.toogleEditButton(component, event);
         
         //Toogle the grid actions
@@ -67,7 +67,12 @@
         component.set("v.displayMode", displayMode); 
         
         //Refresh the items        
-        component.set("v.items", JSON.parse(JSON.stringify(items)));                
+        component.set("v.items", JSON.parse(JSON.stringify(items)));  
+    },
+    refreshMultiSelect : function(component, selectedItems, lastSelectedItems){
+        //Refresh the items        
+        component.set("v.selectedItems", JSON.parse(JSON.stringify(selectedItems))); 
+        component.set("v.lastSelectedItems", JSON.parse(JSON.stringify(lastSelectedItems))); 
     },
     getCellComponents : function(component){
         var cellComponents = [];
@@ -77,19 +82,17 @@
             //Only 1 row
             if(!Array.isArray(rows)){
             	rows = [rows]
-        	}
-            
+        	}         
             rows.forEach(function(row){
                 row.get("v.body").forEach(function(cell){
                     cellComponents.push(cell);
                 })
             });
         }
-        
         return cellComponents;
     },
     checkItems : function(component){
-        var cellComponents = this.getCellComponents(component);        
+        var cellComponents = this.getCellComponents(component); 
         for(var c=0; c < cellComponents.length; c++){
             var cellCmp = cellComponents[c];
             if (cellCmp.get("v.hasErrors")){
@@ -99,7 +102,7 @@
         
         return true;
     },
-    updateItems : function(component){        
+    updateItems : function(component){ 
         var items = component.get("v.items");
         var cellComponents = this.getCellComponents(component);
         
@@ -107,25 +110,27 @@
         cellComponents.forEach(function(cellCmp){
             var column = cellCmp.get("v.column");
             var item = items[cellCmp.get("v.itemRank")];
-            
-            item[column.name] = cellCmp.get("v.value");
-            if(column.type=='Reference'){
-                if(cellCmp.get("v.refLabel")) {
-                  item[column.name + '__Name'] = cellCmp.get("v.refLabel");  
-                } else if(cellCmp.get("v.searchTerm")) {
-                  item[column.name + '__New'] = cellCmp.get("v.searchTerm");  
-                }    
+            if(column) {
+            	item[column.name] = cellCmp.get("v.value");
+            	if(column.type=='Reference'){
+                	if(cellCmp.get("v.refLabel")) {
+                  		item[column.name + '__Name'] = cellCmp.get("v.refLabel");  
+                	} else if(cellCmp.get("v.searchTerm")) {
+                  	item[column.name + '__New'] = cellCmp.get("v.searchTerm");  
+                	}    
+            	}
             }
         });
-        
         return items;
     },
     saveItems : function(component, items, onSuccess, onError){
+   
         //Save items on Salesforce
         var saveItemsAction = component.get("c.saveRelatedListItems");
-        //alert(JSON.stringify(component.get("v.items")));
         saveItemsAction.setParams({
-            "jsonData": JSON.stringify(component.get("v.items"))
+            "jsonData": JSON.stringify(component.get("v.items")),
+            "initialData": JSON.stringify(component.get("v.selectedItems")),
+            "selectedData": JSON.stringify(this.mapToObj(this.updateMultiPickList(component), component))
         });	
         
         saveItemsAction.setCallback(this, function(res) { 
@@ -292,5 +297,86 @@
         });   
         
         $A.enqueueAction(getObjectAction);    		        
+    },
+    loadOptions: function (component) {
+
+        //Call the controller action
+        var action = component.get("c.getBillingGroups");
+        action.setParams({
+            "objectId": component.get("v.recordId")
+        }); 
+      
+        action.setCallback(this, function(response) {  
+            if (response.getState() === "SUCCESS") {
+                var items = response.getReturnValue(); 
+                component.set("v.optionsList", JSON.parse(JSON.stringify(items)));
+            }
+        });
+        
+        $A.enqueueAction(action);
+    },
+    loadSelectedItems: function (component) {
+
+        //Call the controller action
+        var action = component.get("c.getSelectedBillingGroups");
+        action.setParams({
+            "objectId": component.get("v.recordId")
+        }); 
+      
+        action.setCallback(this, function(response) {       
+            if (response.getState() === "SUCCESS") {
+                var selected = response.getReturnValue(); 
+                component.set("v.selectedItems", JSON.parse(JSON.stringify(selected)));
+            }
+        });
+        
+        $A.enqueueAction(action);
+    },
+    updateMultiPickList : function(component){
+        var sMap = new Map();
+        var items = component.get("v.items");
+        var cellComponents = this.getCellComponents(component);
+        
+        //Update the items from cells
+        cellComponents.forEach(function(cellCmp){
+            var column = cellCmp.get("v.column");
+            var item = items[cellCmp.get("v.itemRank")];
+            if(column.type =='MultiPickList' && cellCmp.get("v.lastSelectedItems").length > 0) {
+            	sMap.set(item["Id"], cellCmp.get("v.lastSelectedItems"));
+            }
+        });
+        return sMap;
+    },
+    reloadMultiPickList : function(component){
+        var sMap = new Map();
+        var items = component.get("v.items");
+        var cellComponents = this.getCellComponents(component);
+        
+        //Update the items from cells
+        cellComponents.forEach(function(cellCmp){
+            var column = cellCmp.get("v.column");
+            if(column.type =='MultiPickList') {
+                debugger;
+            	cellCmp.reInit();
+            }
+        });
+    },
+    mapToObj : function(inputMap, component) {
+        var data = [];
+        var recordId = component.get("v.recordId");
+        inputMap.forEach(function(value, key){
+            value.forEach(function(val) {
+                data.push({productid: key, groupid: val, oppid: recordId})
+            });
+        });
+        return data;
+    },
+    getOptionsList : function(component, options){    
+        var optionsList = [];    
+        var items = component.get("v.items");
+        items.forEach(function(item){
+               optionsList.push(options)
+        });
+        return optionsList;
     }
 })

@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="set opportunity product Id" >
+    <aura:attribute name="itemId" type="String"/>
+    <aura:attribute name="itemRank" type="Integer"/>
+</aura:event>
