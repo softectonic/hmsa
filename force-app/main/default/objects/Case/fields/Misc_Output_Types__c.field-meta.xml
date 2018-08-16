@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Misc_Output_Types__c</fullName>
+    <description>Used on the Group Brochure Request.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select all the additional document(s) you want prepared.</inlineHelpText>
+    <label>Misc. Output Types</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Away from Home Care Flyer</fullName>
+                <default>false</default>
+                <label>Away from Home Care Flyer</label>
+            </value>
+            <value>
+                <fullName>Cancer Screening Rack Card - Men</fullName>
+                <default>false</default>
+                <label>Cancer Screening Rack Card - Men</label>
+            </value>
+            <value>
+                <fullName>Cancer Screening Rack Card -Women</fullName>
+                <default>false</default>
+                <label>Cancer Screening Rack Card -Women</label>
+            </value>
+            <value>
+                <fullName>CAAP Brochure</fullName>
+                <default>false</default>
+                <label>CAAP Brochure</label>
+            </value>
+            <value>
+                <fullName>COB Form</fullName>
+                <default>false</default>
+                <label>COB Form</label>
+            </value>
+            <value>
+                <fullName>CVS Drug Benefit Flyer</fullName>
+                <default>false</default>
+                <label>CVS Drug Benefit Flyer</label>
+            </value>
+            <value>
+                <fullName>Dash Eating Plan Flyer</fullName>
+                <default>false</default>
+                <label>Dash Eating Plan Flyer</label>
+            </value>
+            <value>
+                <fullName>Dental Nationwide Access Rack Card</fullName>
+                <default>false</default>
+                <label>Dental Nationwide Access Rack Card</label>
+            </value>
+            <value>
+                <fullName>Find a Doctor Rack Card</fullName>
+                <default>false</default>
+                <label>Find a Doctor Rack Card</label>
+            </value>
+            <value>
+                <fullName>Health Care P&amp;S Brochure</fullName>
+                <default>false</default>
+                <label>Health Care P&amp;S Brochure</label>
+            </value>
+            <value>
+                <fullName>Health Eductaion Workshop Flyer</fullName>
+                <default>false</default>
+                <label>Health Eductaion Workshop Flyer</label>
+            </value>
+            <value>
+                <fullName>HIPAA</fullName>
+                <default>false</default>
+                <label>HIPAA</label>
+            </value>
+            <value>
+                <fullName>HMSA365 Rack Card</fullName>
+                <default>false</default>
+                <label>HMSA365 Rack Card</label>
+            </value>
+            <value>
+                <fullName>Mail Order Form &amp; Envelope</fullName>
+                <default>false</default>
+                <label>Mail Order Form &amp; Envelope</label>
+            </value>
+            <value>
+                <fullName>Make the Best Choice Brochure</fullName>
+                <default>false</default>
+                <label>Make the Best Choice Brochure</label>
+            </value>
+            <value>
+                <fullName>Medication Talk Flyer</fullName>
+                <default>false</default>
+                <label>Medication Talk Flyer</label>
+            </value>
+            <value>
+                <fullName>My Account Rack Card</fullName>
+                <default>false</default>
+                <label>My Account Rack Card</label>
+            </value>
+            <value>
+                <fullName>Online Care Rack Card</fullName>
+                <default>false</default>
+                <label>Online Care Rack Card</label>
+            </value>
+            <value>
+                <fullName>Ornish Lifestyle Medicine Program</fullName>
+                <default>false</default>
+                <label>Ornish Lifestyle Medicine Program</label>
+            </value>
+            <value>
+                <fullName>PCP Rack Card</fullName>
+                <default>false</default>
+                <label>PCP Rack Card</label>
+            </value>
+            <value>
+                <fullName>QuitNet Flyer</fullName>
+                <default>false</default>
+                <label>QuitNet Flyer</label>
+            </value>
+            <value>
+                <fullName>Recipe Cards</fullName>
+                <default>false</default>
+                <label>Recipe Cards</label>
+            </value>
+            <value>
+                <fullName>Traveling Abroad Rack Card</fullName>
+                <default>false</default>
+                <label>Traveling Abroad Rack Card</label>
+            </value>
+            <value>
+                <fullName>Urgent Care Flyer</fullName>
+                <default>false</default>
+                <label>Urgent Care Flyer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

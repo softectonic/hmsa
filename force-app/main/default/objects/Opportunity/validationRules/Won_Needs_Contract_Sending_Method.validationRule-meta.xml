@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Won_Needs_Contract_Sending_Method</fullName>
+    <active>true</active>
+    <description>Make sure there is at least one value selected for the Contract Sending Method field for a Fully Insured Won Opportunity.</description>
+    <errorConditionFormula>$User.Run_Validation__c &amp;&amp;
+ISBLANK ( Contract_Sending_Method__c ) &amp;&amp;
+TEXT (  StageName ) = &#39;Closed Won&#39; &amp;&amp;
+TEXT ( Account.Funding_Type__c ) = &#39;Fully Insured&#39;</errorConditionFormula>
+    <errorDisplayField>Contract_Sending_Method__c</errorDisplayField>
+    <errorMessage>Contract Sending Method is required to move to Closed/Won.</errorMessage>
+</ValidationRule>

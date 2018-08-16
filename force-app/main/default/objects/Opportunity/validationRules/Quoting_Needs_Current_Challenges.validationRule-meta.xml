@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quoting_Needs_Current_Challenges</fullName>
+    <active>true</active>
+    <errorConditionFormula>$User.Run_Validation__c &amp;&amp;
+ Stage_Number__c &gt;= 3 &amp;&amp;
+ISBLANK (  Reason_for_Shopping__c )</errorConditionFormula>
+    <errorDisplayField>Reason_for_Shopping__c</errorDisplayField>
+    <errorMessage>Current Challenges must be entered to move into the Quoting / Negotiation stage.</errorMessage>
+</ValidationRule>

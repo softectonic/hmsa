@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quoting_Needs_At_Least_1_Product</fullName>
+    <active>true</active>
+    <errorConditionFormula>$User.Run_Validation__c &amp;&amp;
+ Stage_Number__c &gt;= 3 &amp;&amp;
+ HasOpportunityLineItem = False</errorConditionFormula>
+    <errorMessage>At least 1 Product must be added to this Opportunity to move into the Quoting / Negotiation stage.</errorMessage>
+</ValidationRule>

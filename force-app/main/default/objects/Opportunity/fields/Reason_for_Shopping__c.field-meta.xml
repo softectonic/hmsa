@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Shopping__c</fullName>
+    <description>Stores the pain points the customers is currently experiencing, to help form the strategy.</description>
+    <externalId>false</externalId>
+    <label>Current Challenges(s)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Account Management</fullName>
+                <default>false</default>
+                <label>Account Management</label>
+            </value>
+            <value>
+                <fullName>Benefits</fullName>
+                <default>false</default>
+                <label>Benefits</label>
+            </value>
+            <value>
+                <fullName>Billing</fullName>
+                <default>false</default>
+                <label>Billing</label>
+            </value>
+            <value>
+                <fullName>Brand / Employee Request</fullName>
+                <default>false</default>
+                <label>Brand / Employee Request</label>
+            </value>
+            <value>
+                <fullName>Data Reporting</fullName>
+                <default>false</default>
+                <label>Data Reporting</label>
+            </value>
+            <value>
+                <fullName>Enrollment</fullName>
+                <default>false</default>
+                <label>Enrollment</label>
+            </value>
+            <value>
+                <fullName>New Business</fullName>
+                <default>false</default>
+                <label>New Business</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Lack of Local Customer Servicing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lack of Local Customer Servicing</label>
+            </value>
+            <value>
+                <fullName>Support of Initiative / Wellness Programs</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Support of Initiative / Wellness Programs</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

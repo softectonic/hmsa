@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lock_Group_Number</fullName>
+    <active>true</active>
+    <description>Don&#39;t allow users to change the Group Number or Group Sub Number fields if there is any status but &quot;Pending&quot; in the Group Status field.</description>
+    <errorConditionFormula>$User.Run_Validation__c &amp;&amp;
+Group_Status__c &lt;&gt; &#39;Pending&#39; &amp;&amp;
+(ISCHANGED ( Group_Number__c ) ||
+ISCHANGED (  Group_Sub_Number__c ))</errorConditionFormula>
+    <errorMessage>You cannot change Group Number or Group Sub Number unless the Group Status is &quot;Pending.&quot;</errorMessage>
+</ValidationRule>

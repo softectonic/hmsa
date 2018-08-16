@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Type__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the Type(s) of Fully Insured contracts or documents that need to be prepared for this Opportunity.</inlineHelpText>
+    <label>Contract Type(s)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Evergreen</fullName>
+                <default>false</default>
+                <label>Evergreen</label>
+            </value>
+            <value>
+                <fullName>Annual</fullName>
+                <default>false</default>
+                <label>Annual</label>
+            </value>
+            <value>
+                <fullName>Multi-Year</fullName>
+                <default>false</default>
+                <label>Multi-Year</label>
+            </value>
+            <value>
+                <fullName>Contingent</fullName>
+                <default>false</default>
+                <label>Contingent</label>
+            </value>
+            <value>
+                <fullName>Reverse Contingent</fullName>
+                <default>false</default>
+                <label>Reverse Contingent</label>
+            </value>
+            <value>
+                <fullName>Rider Only</fullName>
+                <default>false</default>
+                <label>Rider Only</label>
+            </value>
+            <value>
+                <fullName>Modified / Amendment</fullName>
+                <default>false</default>
+                <label>Modified / Amendment</label>
+            </value>
+            <value>
+                <fullName>Exhibits Only</fullName>
+                <default>false</default>
+                <label>Exhibits Only</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

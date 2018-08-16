@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Group_Brochure_Request__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Used on the Benefit Comparison Request.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Lookup a Group Brochure Request case that this case is associated with.</inlineHelpText>
+    <label>Group Brochure Request</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>You can only link to &quot;Group Brochure Request&quot; cases.</errorMessage>
+        <filterItems>
+            <field>Case.RecordType.DeveloperName</field>
+            <operation>equals</operation>
+            <value>Group_Brochure_Request</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Case</referenceTo>
+    <relationshipLabel>Benefit Comparison Requests</relationshipLabel>
+    <relationshipName>Benefit_Comparison_Requests</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

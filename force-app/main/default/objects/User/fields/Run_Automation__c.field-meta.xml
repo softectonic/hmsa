@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Run_Automation__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>We used this so that the Scheduled Job that creates Assumptive Renewals didn&#39;t have the Opportunities set back to &quot;Renewal&quot; when the Opportunity Product records were added.  The goal is to have it implemented everywhere.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Only set this to False if you want the user to bypass automation&#39;s that include this check.</inlineHelpText>
+    <label>Run Automation</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

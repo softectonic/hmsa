@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Sending_Method__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Select all of the ways that the Contract will be sent to the Customer.</inlineHelpText>
+    <label>Contract Sending Method(s)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hard Copy - Mailed by SAS</fullName>
+                <default>false</default>
+                <label>Hard Copy - Mailed by SAS</label>
+            </value>
+            <value>
+                <fullName>Soft Copy - Emailed by Sales Account Team</fullName>
+                <default>false</default>
+                <label>Soft Copy - Emailed by Sales Account Team</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

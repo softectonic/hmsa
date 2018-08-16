@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PPA_Needs_Effective_Date</fullName>
+    <active>true</active>
+    <description>Effective Date field is required on New to Blue and Win Back opportunities before you can get into &quot;Post Proposal Acceptance&quot; stage.</description>
+    <errorConditionFormula>$User.Run_Validation__c &amp;&amp;
+ISBLANK ( Effective_Date__c ) &amp;&amp;
+( 
+  TEXT ( StageName ) = &#39;Post Proposal Acceptance&#39; ||
+  TEXT ( StageName ) = &#39;Closed Won&#39; 
+)</errorConditionFormula>
+    <errorDisplayField>Effective_Date__c</errorDisplayField>
+    <errorMessage>Effective Date is required to move to Post Proposal Acceptance (or Closed Won)</errorMessage>
+</ValidationRule>

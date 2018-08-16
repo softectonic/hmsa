@@ -36,7 +36,7 @@
       <section aura:id="newGroupModal" role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-describedby="modal-content-id-1" aria-hidden="false" class="slds-modal slds-fade-in-open hideDiv">
         <div class="slds-modal__container">
           <div class="slds-modal__header">
-             <button class="slds-button slds-button_icon-inverse slds-modal__close" onclick="{!c.hideModal}">
+             <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.hideModal}">
                  <lightning:icon iconName="utility:close" size="small" variant="bare"/>
                  <span class="slds-assistive-text">Close</span>
              </button>      
@@ -81,8 +81,8 @@
           </div>
           
           <footer class="slds-modal__footer">
-            <lightning:button label="Cancel" class="slds-button slds-button_neutral" onclick="{!c.closedModal}"/>
-            <lightning:button label="Save" class="slds-button slds-button_brand" onclick="{!c.saveBillingGroup}"/> 
+            <lightning:button label="Cancel" class="slds-button slds-button--neutral" onclick="{!c.closedModal}"/>
+            <lightning:button label="Save" class="slds-button slds-button--brand" onclick="{!c.saveBillingGroup}"/> 
           </footer>
         </div>
       </section>

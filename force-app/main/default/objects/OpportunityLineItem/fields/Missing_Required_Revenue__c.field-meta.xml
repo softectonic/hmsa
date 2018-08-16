@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Missing_Required_Revenue__c</fullName>
+    <externalId>false</externalId>
+    <formula>Selected_By_Customer__c &amp;&amp; 
+ UnitPrice  = 0 &amp;&amp;
+(
+PricebookEntry.Product2.Name  = &#39;Plan Offering&#39; &amp;&amp; NOT ISBLANK ( 
+Dental_Coverage_Code__c ) 
+|| 
+PricebookEntry.Product2.Name &lt;&gt; &#39;Plan Offering&#39; 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Missing Required Revenue</label>
+    <type>Checkbox</type>
+</CustomField>

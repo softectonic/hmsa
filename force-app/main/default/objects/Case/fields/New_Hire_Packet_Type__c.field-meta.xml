@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Hire_Packet_Type__c</fullName>
+    <description>Used on the Group Brochure Request.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the Type(s) of coverage that you want the New Hire Packets created for.</inlineHelpText>
+    <label>New Hire Packet Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Coverage_Code_Type</valueSetName>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Stage__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Shows where the Customer is in their life cycle with HMSA.</inlineHelpText>
+    <label>Customer Stage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New to Blue</fullName>
+                <default>true</default>
+                <label>New to Blue</label>
+            </value>
+            <value>
+                <fullName>First Opportunity Won</fullName>
+                <default>false</default>
+                <label>First Opportunity Won</label>
+            </value>
+            <value>
+                <fullName>Active Customer</fullName>
+                <default>false</default>
+                <label>Active Customer</label>
+            </value>
+            <value>
+                <fullName>Former Customer</fullName>
+                <default>false</default>
+                <label>Former Customer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

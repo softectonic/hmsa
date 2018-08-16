@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Request</fullName>
+    <active>true</active>
+    <businessProcess>AMS Internal</businessProcess>
+    <compactLayoutAssignment>AMS</compactLayoutAssignment>
+    <description>To request the SAS team create a contract after an Opportunity is Won.</description>
+    <label>Fully Insured Contract Request</label>
+    <picklistValues>
+        <picklist>Air__c</picklist>
+        <values>
+            <fullName>One Way</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Round Trip</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Akamai_Group_Option__c</picklist>
+        <values>
+            <fullName>Retirees</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Union</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Arriving_Airport__c</picklist>
+        <values>
+            <fullName>HNL%09- Honolulu %28Oahu%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HNM - Hana %28Maui%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HPV%09- Princeville %28Kauai%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ITO - Hilo %28Big Island%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JHM - Kapalua %28Maui%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KOA - Kona %28Big Island%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LIH - Lihue %28Kauai%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNY - Lanai %28Lanai%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MKK - Molokai %28Molokai%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MUA - Waimea %28Big Island%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OGG - Kahului %28Maui%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Case_Reason_Detail__c</picklist>
+        <values>
+            <fullName>Ambulance Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Beacon Pre-Cert Denial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Behavioral Health Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CVS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CVS Pre-Cert Denial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancer Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Claim Denial %28Member%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Denial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diagnostic and Therapeutic Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dialysis Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Durable Medical Equipment%2FSupplies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EPSDT Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emergency and Urgent Care Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EviCore Pre-Cert Denial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External%2FOther</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family Planning Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Filing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HMSA Pre-Cert Denial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hearing Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Home Health Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inpatient Hospital Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Long-Term Services %26 Supports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MQD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medically Related Dental Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non Urgent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Emergency Transportation Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nutrition Counseling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organizational</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Facility Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Practitioner Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outpatient Hospital Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment Dispute</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physician Specialty Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pregnancy and Maternity Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prescription Drugs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Primary Care Physician Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Provider Quality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QUEST Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rehabilitation Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Skilled Nursing Facility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sleep Lab Test</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smoking Cessation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Status</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Urgent %28within one business day%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vision Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Void Request</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Template__c</picklist>
+        <values>
+            <fullName>Akamai-MA Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Akamai-MA and MAPD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Akamai-MAPD Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FI-Metallic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FI-Union</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FIE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rider-Akamai</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rider-CompCare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rider-With Insured Plan</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Delivery_Output_Type__c</picklist>
+        <values>
+            <fullName>Mail - Collation into envelopes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mail - Loose Materials</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return to Rep - Collation in Envelopes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return to Rep - Loose Materials</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return to Rep - Soft Copy %28Email%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Departing_Airport__c</picklist>
+        <values>
+            <fullName>HNL%09- Honolulu %28Oahu%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HNM - Hana %28Maui%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HPV%09- Princeville %28Kauai%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ITO - Hilo %28Big Island%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JHM - Kapalua %28Maui%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KOA - Kona %28Big Island%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LIH - Lihue %28Kauai%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNY - Lanai %28Lanai%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MKK - Molokai %28Molokai%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MUA - Waimea %28Big Island%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OGG - Kahului %28Maui%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Enrollment_Forms__c</picklist>
+        <values>
+            <fullName>Choice Dental Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CompMED %2F Choice Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CompMED %2F HPH %2F Choice Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CompMED %2F HPH %2F No Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CompMED %2F HPH-B %2F Choice Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CompMED %2F HPH-B %2F No Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CompMED %2F No Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HPH %2F Choice Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HPH %2F No Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HPH-B %2F Choice Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HPH-B %2F No Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPP %2F Choice Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPP %2F CompMED %2F Choice Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPP %2F CompMED %2F HPH %2F Choice Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPP %2F CompMED %2F HPH %2F No Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPP %2F CompMED %2F No Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPP %2F HPH %2F Choice Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPP %2F HPH %2F No Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPP %2F HPH-B %2F Choice Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPP %2F HPH-B %2F No Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPP %2F No Dental</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ground_Service_Codes__c</picklist>
+        <values>
+            <fullName>Ambulatory %28A0100%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gurney %28T2005%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paratransit %28A0130%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ground__c</picklist>
+        <values>
+            <fullName>One Way</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Round Trip</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Has_Early_Termination__c</picklist>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Has_Retro_Cancallation__c</picklist>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Home_Island_Ground_Service_Codes__c</picklist>
+        <values>
+            <fullName>Ambulatory %28A0100%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gurney %28T2005%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paratransit %28A0130%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Home_Island_Ground__c</picklist>
+        <values>
+            <fullName>One Way</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Round Trip</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Internal_Requestor_to_Review__c</picklist>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Internal_Sub_Status__c</picklist>
+        <values>
+            <fullName>Awaiting Contract %28Legal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Awaiting Validation %28SAM%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing Coverage Codes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing Information %28SAM%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong Coverage Codes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Misc_Output_Types__c</picklist>
+        <values>
+            <fullName>Away from Home Care Flyer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAAP Brochure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COB Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CVS Drug Benefit Flyer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancer Screening Rack Card - Men</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancer Screening Rack Card -Women</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dash Eating Plan Flyer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dental Nationwide Access Rack Card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Find a Doctor Rack Card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HIPAA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HMSA365 Rack Card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Care P%26S Brochure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Eductaion Workshop Flyer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mail Order Form %26 Envelope</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Make the Best Choice Brochure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medication Talk Flyer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>My Account Rack Card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online Care Rack Card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ornish Lifestyle Medicine Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PCP Rack Card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QuitNet Flyer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recipe Cards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traveling Abroad Rack Card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Urgent Care Flyer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>New_Hire_Packet_Type__c</picklist>
+        <values>
+            <fullName>Complementary Cov Code</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dental Cov Code</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drug Cov Code</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Med Cov Code</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vision Cov Code</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Provider_Directory__c</picklist>
+        <values>
+            <fullName>Compcare Provider Listing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dental - Dental Directory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dental - Dental Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drug - PPP %2F HMO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical - HMO HPH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical - HMO Hawaii</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical - HMO Kauai</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical - HMO Maui</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical - PPP %2F CompMED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical - PPP Hawaii</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical - PPP Kauai</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical - PPP Maui</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vision - HMO Appliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vision - Special Vision</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Complex functionality</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason_for_Attendant__c</picklist>
+        <values>
+            <fullName>Anesthesia%2FSedation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approved by MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chemotherapy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ground Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Language Barrier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One Time Exception</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physically Handicapped</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seizures%2FEpilepsy</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason_for_Request__c</picklist>
+        <values>
+            <fullName>Existing Group acquires a new company resulting in new HMSA members</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Group discontinues offering a competitor plan %28HMSA sole carrier%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Group offering a new HMSA plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Group Sales %28with 50%2B new subscribers - expected%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Hire packets %28based on group turn-over activity%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OE Presentation w%2FHPA or HMSA Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proposal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SAS_Fulfillment_Type__c</picklist>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Reprint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retrieval</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Signature_Option__c</picklist>
+        <values>
+            <fullName>Add Paybox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Add Signature %281 line%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Add Signature %282 lines%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Feature Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Question</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Urgent_Reason__c</picklist>
+        <values>
+            <fullName>Chemo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dialysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High Risk Pregnancy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post Op</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

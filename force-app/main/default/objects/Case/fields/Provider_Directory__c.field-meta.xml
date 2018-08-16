@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provider_Directory__c</fullName>
+    <description>Used on the Group Brochure Request.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the kind(s) of directories you need created.</inlineHelpText>
+    <label>Provider Directory</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Medical - PPP / CompMED</fullName>
+                <default>false</default>
+                <label>Medical - PPP / CompMED</label>
+            </value>
+            <value>
+                <fullName>Medical - PPP Hawaii</fullName>
+                <default>false</default>
+                <label>Medical - PPP Hawaii</label>
+            </value>
+            <value>
+                <fullName>Medical - PPP Kauai</fullName>
+                <default>false</default>
+                <label>Medical - PPP Kauai</label>
+            </value>
+            <value>
+                <fullName>Medical - PPP Maui</fullName>
+                <default>false</default>
+                <label>Medical - PPP Maui</label>
+            </value>
+            <value>
+                <fullName>Medical - HMO HPH</fullName>
+                <default>false</default>
+                <label>Medical - HMO HPH</label>
+            </value>
+            <value>
+                <fullName>Medical - HMO Hawaii</fullName>
+                <default>false</default>
+                <label>Medical - HMO Hawaii</label>
+            </value>
+            <value>
+                <fullName>Medical - HMO Kauai</fullName>
+                <default>false</default>
+                <label>Medical - HMO Kauai</label>
+            </value>
+            <value>
+                <fullName>Medical - HMO Maui</fullName>
+                <default>false</default>
+                <label>Medical - HMO Maui</label>
+            </value>
+            <value>
+                <fullName>Drug - PPP / HMO</fullName>
+                <default>false</default>
+                <label>Drug - PPP / HMO</label>
+            </value>
+            <value>
+                <fullName>Vision - Special Vision</fullName>
+                <default>false</default>
+                <label>Vision - Special Vision</label>
+            </value>
+            <value>
+                <fullName>Vision - HMO Appliance</fullName>
+                <default>false</default>
+                <label>Vision - HMO Appliance</label>
+            </value>
+            <value>
+                <fullName>Dental - Dental Directory</fullName>
+                <default>false</default>
+                <label>Dental - Dental Directory</label>
+            </value>
+            <value>
+                <fullName>Dental - Dental Network</fullName>
+                <default>false</default>
+                <label>Dental - Dental Network</label>
+            </value>
+            <value>
+                <fullName>Compcare Provider Listing</fullName>
+                <default>false</default>
+                <label>Compcare Provider Listing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

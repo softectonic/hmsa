@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Plan_LOB__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Don&#39;t need this anymore as we will have categories for this information - Plan type line of business (LOB) applicable to the article content.</inlineHelpText>
+    <label>Plan LOB</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Akamai Advantage (AA)</fullName>
+                <default>false</default>
+                <label>Akamai Advantage (AA)</label>
+            </value>
+            <value>
+                <fullName>Essential Advantage</fullName>
+                <default>false</default>
+                <label>Essential Advantage</label>
+            </value>
+            <value>
+                <fullName>Private Business (PB)</fullName>
+                <default>false</default>
+                <label>Private Business (PB)</label>
+            </value>
+            <value>
+                <fullName>PPO</fullName>
+                <default>false</default>
+                <label>PPO</label>
+            </value>
+            <value>
+                <fullName>HMO</fullName>
+                <default>false</default>
+                <label>HMO</label>
+            </value>
+            <value>
+                <fullName>Federal Plan 87</fullName>
+                <default>false</default>
+                <label>Federal Plan 87</label>
+            </value>
+            <value>
+                <fullName>EUTF</fullName>
+                <default>false</default>
+                <label>EUTF</label>
+            </value>
+            <value>
+                <fullName>QUEST</fullName>
+                <default>false</default>
+                <label>QUEST</label>
+            </value>
+            <value>
+                <fullName>Federal Employee Program (FEP)</fullName>
+                <default>false</default>
+                <label>Federal Employee Program (FEP)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

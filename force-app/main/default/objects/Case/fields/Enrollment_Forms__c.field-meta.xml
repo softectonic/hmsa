@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enrollment_Forms__c</fullName>
+    <description>Used on the Group Brochure Request.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the type of enrollment form you want prepared.</inlineHelpText>
+    <label>Enrollment Forms</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PPP / CompMED / HPH / Choice Dental</fullName>
+                <default>false</default>
+                <label>114 - PPP / CompMED / HPH / Choice Dental</label>
+            </value>
+            <value>
+                <fullName>PPP / CompMED / HPH / No Dental</fullName>
+                <default>false</default>
+                <label>115 - PPP / CompMED / HPH / No Dental</label>
+            </value>
+            <value>
+                <fullName>PPP / CompMED / Choice Dental</fullName>
+                <default>false</default>
+                <label>118 - PPP / CompMED / Choice Dental</label>
+            </value>
+            <value>
+                <fullName>PPP / CompMED / No Dental</fullName>
+                <default>false</default>
+                <label>119 - PPP / CompMED / No Dental</label>
+            </value>
+            <value>
+                <fullName>CompMED / HPH / Choice Dental</fullName>
+                <default>false</default>
+                <label>120 - CompMED / HPH / Choice Dental</label>
+            </value>
+            <value>
+                <fullName>CompMED / HPH / No Dental</fullName>
+                <default>false</default>
+                <label>121 - CompMED / HPH / No Dental</label>
+            </value>
+            <value>
+                <fullName>CompMED / HPH-B / Choice Dental</fullName>
+                <default>false</default>
+                <label>122 - CompMED / HPH-B / Choice Dental</label>
+            </value>
+            <value>
+                <fullName>CompMED / HPH-B / No Dental</fullName>
+                <default>false</default>
+                <label>123 - CompMED / HPH-B / No Dental</label>
+            </value>
+            <value>
+                <fullName>CompMED / No Dental</fullName>
+                <default>false</default>
+                <label>126 - CompMED / No Dental</label>
+            </value>
+            <value>
+                <fullName>CompMED / Choice Dental</fullName>
+                <default>false</default>
+                <label>127 - CompMED / Choice Dental</label>
+            </value>
+            <value>
+                <fullName>PPP / HPH / Choice Dental</fullName>
+                <default>false</default>
+                <label>005 - PPP / HPH / Choice Dental</label>
+            </value>
+            <value>
+                <fullName>PPP / HPH / No Dental</fullName>
+                <default>false</default>
+                <label>006 - PPP / HPH / No Dental</label>
+            </value>
+            <value>
+                <fullName>PPP / HPH-B / Choice Dental</fullName>
+                <default>false</default>
+                <label>007 - PPP / HPH-B / Choice Dental</label>
+            </value>
+            <value>
+                <fullName>PPP / HPH-B / No Dental</fullName>
+                <default>false</default>
+                <label>008 - PPP / HPH-B / No Dental</label>
+            </value>
+            <value>
+                <fullName>PPP / Choice Dental</fullName>
+                <default>false</default>
+                <label>013 - PPP / Choice Dental</label>
+            </value>
+            <value>
+                <fullName>PPP / No Dental</fullName>
+                <default>false</default>
+                <label>014 - PPP / No Dental</label>
+            </value>
+            <value>
+                <fullName>HPH / Choice Dental</fullName>
+                <default>false</default>
+                <label>015 - HPH / Choice Dental</label>
+            </value>
+            <value>
+                <fullName>HPH / No Dental</fullName>
+                <default>false</default>
+                <label>016 - HPH / No Dental</label>
+            </value>
+            <value>
+                <fullName>HPH-B / Choice Dental</fullName>
+                <default>false</default>
+                <label>019 - HPH-B / Choice Dental</label>
+            </value>
+            <value>
+                <fullName>HPH-B / No Dental</fullName>
+                <default>false</default>
+                <label>020 - HPH-B / No Dental</label>
+            </value>
+            <value>
+                <fullName>Choice Dental Only</fullName>
+                <default>false</default>
+                <label>031 - Choice Dental Only</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

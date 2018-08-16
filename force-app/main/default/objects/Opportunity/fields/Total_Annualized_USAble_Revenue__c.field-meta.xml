@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Annualized_USAble_Revenue__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Roll up of all selected product&#39;s Annualized Revenue.</inlineHelpText>
+    <label>Total Annualized USAble Revenue</label>
+    <summarizedField>OpportunityLineItem.Annualized_Revenue_for_Rollup__c</summarizedField>
+    <summaryFilterItems>
+        <field>OpportunityLineItem.Selected_By_Customer__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

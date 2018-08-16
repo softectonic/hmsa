@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expected_Enrollment_Percent__c</fullName>
+    <defaultValue>1.0</defaultValue>
+    <externalId>false</externalId>
+    <inlineHelpText>The percentage of the Total Eligible Employees, Members or Subscribers you think will choose HMSA as their carrier.</inlineHelpText>
+    <label>Expected Enrollment %</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

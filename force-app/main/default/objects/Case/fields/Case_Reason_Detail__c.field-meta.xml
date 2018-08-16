@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Reason_Detail__c</fullName>
+    <description>Dependency on case reason</description>
+    <externalId>false</externalId>
+    <label>Case Reason Detail</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Reason</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ambulance Services</fullName>
+                <default>false</default>
+                <label>Ambulance Services</label>
+            </value>
+            <value>
+                <fullName>Behavioral Health Services</fullName>
+                <default>false</default>
+                <label>Behavioral Health Services</label>
+            </value>
+            <value>
+                <fullName>Cancer Care</fullName>
+                <default>false</default>
+                <label>Cancer Care</label>
+            </value>
+            <value>
+                <fullName>Diagnostic and Therapeutic Services</fullName>
+                <default>false</default>
+                <label>Diagnostic and Therapeutic Services</label>
+            </value>
+            <value>
+                <fullName>Dialysis Services</fullName>
+                <default>false</default>
+                <label>Dialysis Services</label>
+            </value>
+            <value>
+                <fullName>Durable Medical Equipment/Supplies</fullName>
+                <default>false</default>
+                <label>Durable Medical Equipment/Supplies</label>
+            </value>
+            <value>
+                <fullName>Emergency and Urgent Care Services</fullName>
+                <default>false</default>
+                <label>Emergency and Urgent Care Services</label>
+            </value>
+            <value>
+                <fullName>EPSDT Services</fullName>
+                <default>false</default>
+                <label>EPSDT Services</label>
+            </value>
+            <value>
+                <fullName>Family Planning Services</fullName>
+                <default>false</default>
+                <label>Family Planning Services</label>
+            </value>
+            <value>
+                <fullName>Hearing Services</fullName>
+                <default>false</default>
+                <label>Hearing Services</label>
+            </value>
+            <value>
+                <fullName>Home Health Services</fullName>
+                <default>false</default>
+                <label>Home Health Services</label>
+            </value>
+            <value>
+                <fullName>Hospice</fullName>
+                <default>false</default>
+                <label>Hospice</label>
+            </value>
+            <value>
+                <fullName>Inpatient Hospital Services</fullName>
+                <default>false</default>
+                <label>Inpatient Hospital Services</label>
+            </value>
+            <value>
+                <fullName>Long-Term Services &amp; Supports</fullName>
+                <default>false</default>
+                <label>Long-Term Services &amp; Supports</label>
+            </value>
+            <value>
+                <fullName>Medically Related Dental Services</fullName>
+                <default>false</default>
+                <label>Medically Related Dental Services</label>
+            </value>
+            <value>
+                <fullName>Non-Emergency Transportation Services</fullName>
+                <default>false</default>
+                <label>Non-Emergency Transportation Services</label>
+            </value>
+            <value>
+                <fullName>Nutrition Counseling</fullName>
+                <default>false</default>
+                <label>Nutrition Counseling</label>
+            </value>
+            <value>
+                <fullName>Other Practitioner Services</fullName>
+                <default>false</default>
+                <label>Other Practitioner Services</label>
+            </value>
+            <value>
+                <fullName>Other Facility Services</fullName>
+                <default>false</default>
+                <label>Other Facility Services</label>
+            </value>
+            <value>
+                <fullName>Outpatient Hospital Services</fullName>
+                <default>false</default>
+                <label>Outpatient Hospital Services</label>
+            </value>
+            <value>
+                <fullName>Primary Care Physician Services</fullName>
+                <default>false</default>
+                <label>Primary Care Physician Services</label>
+            </value>
+            <value>
+                <fullName>Physician Specialty Services</fullName>
+                <default>false</default>
+                <label>Physician Specialty Services</label>
+            </value>
+            <value>
+                <fullName>Pregnancy and Maternity Care</fullName>
+                <default>false</default>
+                <label>Pregnancy and Maternity Care</label>
+            </value>
+            <value>
+                <fullName>Prescription Drugs</fullName>
+                <default>false</default>
+                <label>Prescription Drugs</label>
+            </value>
+            <value>
+                <fullName>Rehabilitation Services</fullName>
+                <default>false</default>
+                <label>Rehabilitation Services</label>
+            </value>
+            <value>
+                <fullName>Skilled Nursing Facility</fullName>
+                <default>false</default>
+                <label>Skilled Nursing Facility</label>
+            </value>
+            <value>
+                <fullName>Sleep Lab Test</fullName>
+                <default>false</default>
+                <label>Sleep Lab Test</label>
+            </value>
+            <value>
+                <fullName>Smoking Cessation</fullName>
+                <default>false</default>
+                <label>Smoking Cessation</label>
+            </value>
+            <value>
+                <fullName>Surgery</fullName>
+                <default>false</default>
+                <label>Surgery</label>
+            </value>
+            <value>
+                <fullName>Vision Services</fullName>
+                <default>false</default>
+                <label>Vision Services</label>
+            </value>
+            <value>
+                <fullName>Filing</fullName>
+                <default>false</default>
+                <label>Filing</label>
+            </value>
+            <value>
+                <fullName>Status</fullName>
+                <default>false</default>
+                <label>Status</label>
+            </value>
+            <value>
+                <fullName>Denial</fullName>
+                <default>false</default>
+                <label>Denial</label>
+            </value>
+            <value>
+                <fullName>Payment Dispute</fullName>
+                <default>false</default>
+                <label>Payment Dispute</label>
+            </value>
+            <value>
+                <fullName>Void Request</fullName>
+                <default>false</default>
+                <label>Void Request</label>
+            </value>
+            <value>
+                <fullName>Organizational</fullName>
+                <default>false</default>
+                <label>Organizational</label>
+            </value>
+            <value>
+                <fullName>Provider Quality</fullName>
+                <default>false</default>
+                <label>Provider Quality</label>
+            </value>
+            <value>
+                <fullName>HMSA Pre-Cert Denial</fullName>
+                <default>false</default>
+                <label>HMSA Pre-Cert Denial</label>
+            </value>
+            <value>
+                <fullName>CVS Pre-Cert Denial</fullName>
+                <default>false</default>
+                <label>CVS Pre-Cert Denial</label>
+            </value>
+            <value>
+                <fullName>Beacon Pre-Cert Denial</fullName>
+                <default>false</default>
+                <label>Beacon Pre-Cert Denial</label>
+            </value>
+            <value>
+                <fullName>EviCore Pre-Cert Denial</fullName>
+                <default>false</default>
+                <label>EviCore Pre-Cert Denial</label>
+            </value>
+            <value>
+                <fullName>Claim Denial (Member)</fullName>
+                <default>false</default>
+                <label>Claim Denial (Member)</label>
+            </value>
+            <value>
+                <fullName>Urgent (within one business day)</fullName>
+                <default>false</default>
+                <label>Urgent (within one business day)</label>
+            </value>
+            <value>
+                <fullName>Non Urgent</fullName>
+                <default>false</default>
+                <label>Non Urgent</label>
+            </value>
+            <value>
+                <fullName>CVS</fullName>
+                <default>false</default>
+                <label>CVS</label>
+            </value>
+            <value>
+                <fullName>QUEST Dental</fullName>
+                <default>false</default>
+                <label>QUEST Dental</label>
+            </value>
+            <value>
+                <fullName>MQD</fullName>
+                <default>false</default>
+                <label>MQD</label>
+            </value>
+            <value>
+                <fullName>Internal</fullName>
+                <default>false</default>
+                <label>Internal</label>
+            </value>
+            <value>
+                <fullName>External/Other</fullName>
+                <default>false</default>
+                <label>External/Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Appeal</controllingFieldValue>
+            <valueName>HMSA Pre-Cert Denial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Appeal</controllingFieldValue>
+            <valueName>CVS Pre-Cert Denial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Appeal</controllingFieldValue>
+            <valueName>Beacon Pre-Cert Denial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Appeal</controllingFieldValue>
+            <valueName>EviCore Pre-Cert Denial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Appeal</controllingFieldValue>
+            <valueName>Claim Denial (Member)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Request</controllingFieldValue>
+            <controllingFieldValue>Revise Request</controllingFieldValue>
+            <controllingFieldValue>Cancel Request</controllingFieldValue>
+            <controllingFieldValue>Check Status</controllingFieldValue>
+            <valueName>Urgent (within one business day)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>New Request</controllingFieldValue>
+            <controllingFieldValue>Revise Request</controllingFieldValue>
+            <controllingFieldValue>Cancel Request</controllingFieldValue>
+            <controllingFieldValue>Check Status</controllingFieldValue>
+            <valueName>Non Urgent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Transfer</controllingFieldValue>
+            <valueName>CVS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Transfer</controllingFieldValue>
+            <valueName>QUEST Dental</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Transfer</controllingFieldValue>
+            <valueName>MQD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Transfer</controllingFieldValue>
+            <valueName>Internal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Transfer</controllingFieldValue>
+            <valueName>External/Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Ambulance Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Behavioral Health Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Cancer Care</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Diagnostic and Therapeutic Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Dialysis Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Durable Medical Equipment/Supplies</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Emergency and Urgent Care Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>EPSDT Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Family Planning Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Hearing Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Home Health Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Hospice</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Inpatient Hospital Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Long-Term Services &amp; Supports</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Medically Related Dental Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Non-Emergency Transportation Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Nutrition Counseling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Other Practitioner Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Other Facility Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Outpatient Hospital Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Primary Care Physician Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Physician Specialty Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Pregnancy and Maternity Care</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Prescription Drugs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Rehabilitation Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Skilled Nursing Facility</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Sleep Lab Test</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Smoking Cessation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Surgery</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Benefit/OOP</controllingFieldValue>
+            <valueName>Vision Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Claim Inquiry</controllingFieldValue>
+            <valueName>Filing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Claim Inquiry</controllingFieldValue>
+            <valueName>Status</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Claim Inquiry</controllingFieldValue>
+            <valueName>Denial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Claim Inquiry</controllingFieldValue>
+            <valueName>Payment Dispute</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Claim Inquiry</controllingFieldValue>
+            <valueName>Void Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Complaint</controllingFieldValue>
+            <controllingFieldValue>Member Grievance</controllingFieldValue>
+            <controllingFieldValue>Provider Grievance</controllingFieldValue>
+            <valueName>Organizational</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Complaint</controllingFieldValue>
+            <controllingFieldValue>Member Grievance</controllingFieldValue>
+            <controllingFieldValue>Provider Grievance</controllingFieldValue>
+            <valueName>Provider Quality</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

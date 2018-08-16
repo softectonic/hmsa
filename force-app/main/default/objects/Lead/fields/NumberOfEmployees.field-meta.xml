@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NumberOfEmployees</fullName>
+    <inlineHelpText>If you don&#39;t know the exact value, try to at least target one of these: 1 for the &quot;Individual&quot; queue, &lt;50 for the &quot;Small Group&quot; queue, 50+ for the &quot;Large Group&quot; queue</inlineHelpText>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Employee_Count__c</fullName>
+    <description>Stores the expected total employee count for this opportunity.  Could change for renewal opportunities.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field is initially set from the &quot;Employees&quot; field on the Account record.</inlineHelpText>
+    <label>Employee Count</label>
+    <precision>7</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HPA_Event</fullName>
+    <active>true</active>
+    <description>To capture details on Health Plan Advisor assistance cases.</description>
+    <label>HPA Event</label>
+    <picklistValues>
+        <picklist>Additional_Event_Support__c</picklist>
+        <values>
+            <fullName>AskHMSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blue Zones Project</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sharecare Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Well-being Consultant</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>HealthCloudGA__TaskType__c</picklist>
+        <values>
+            <fullName>Administrative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clinical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uncategorized</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subject</picklist>
+        <values>
+            <fullName>Meeting</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Benefit Fair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blue Zone Project</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Fair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OE Presentation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sharecare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Voice Over Recording</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

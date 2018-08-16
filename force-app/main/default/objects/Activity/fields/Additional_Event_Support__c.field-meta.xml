@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Additional_Event_Support__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the additional items you would like to have for your event.</inlineHelpText>
+    <label>Additional Event Support(s)</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AskHMSA</fullName>
+                <default>false</default>
+                <label>AskHMSA</label>
+            </value>
+            <value>
+                <fullName>Well-being Consultant</fullName>
+                <default>false</default>
+                <label>Well-being Consultant</label>
+            </value>
+            <value>
+                <fullName>Sharecare Team</fullName>
+                <default>false</default>
+                <label>Sharecare Team</label>
+            </value>
+            <value>
+                <fullName>Blue Zones Project</fullName>
+                <default>false</default>
+                <label>Blue Zones Project</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

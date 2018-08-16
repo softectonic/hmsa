@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Attendant__c</fullName>
+    <description>Used For Travel</description>
+    <externalId>false</externalId>
+    <label>Reason for Attendant</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Minor</fullName>
+                <default>false</default>
+                <label>Minor</label>
+            </value>
+            <value>
+                <fullName>Anesthesia/Sedation</fullName>
+                <default>false</default>
+                <label>Anesthesia/Sedation</label>
+            </value>
+            <value>
+                <fullName>Chemotherapy</fullName>
+                <default>false</default>
+                <label>Chemotherapy</label>
+            </value>
+            <value>
+                <fullName>Physically Handicapped</fullName>
+                <default>false</default>
+                <label>Physically Handicapped</label>
+            </value>
+            <value>
+                <fullName>Language Barrier</fullName>
+                <default>false</default>
+                <label>Language Barrier</label>
+            </value>
+            <value>
+                <fullName>Seizures/Epilepsy</fullName>
+                <default>false</default>
+                <label>Seizures/Epilepsy</label>
+            </value>
+            <value>
+                <fullName>Approved by MM</fullName>
+                <default>false</default>
+                <label>Approved by MM</label>
+            </value>
+            <value>
+                <fullName>One Time Exception</fullName>
+                <default>false</default>
+                <label>One Time Exception</label>
+            </value>
+            <value>
+                <fullName>Ground Only</fullName>
+                <default>false</default>
+                <label>Ground Only</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

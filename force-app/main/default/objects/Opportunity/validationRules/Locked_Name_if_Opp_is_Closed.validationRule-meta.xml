@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Locked_Name_if_Opp_is_Closed</fullName>
+    <active>true</active>
+    <description>Locks this field if Opp is closed.</description>
+    <errorConditionFormula>$User.Run_Validation__c &amp;&amp; 
+IsClosed &amp;&amp;
+ISCHANGED( Name )</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>Cannot edit this field if the Opportunity in Closed.</errorMessage>
+</ValidationRule>

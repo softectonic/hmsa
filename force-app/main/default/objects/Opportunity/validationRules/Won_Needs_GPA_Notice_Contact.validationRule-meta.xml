@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Won_Needs_GPA_Notice_Contact</fullName>
+    <active>true</active>
+    <description>The GPA Notice Contact field is required to Win an Opportunity.</description>
+    <errorConditionFormula>$User.Run_Validation__c &amp;&amp;
+ISBLANK (  GPA_Notice_Contact__c ) &amp;&amp;
+TEXT (  StageName ) = &#39;Closed Won&#39;</errorConditionFormula>
+    <errorDisplayField>GPA_Notice_Contact__c</errorDisplayField>
+    <errorMessage>The GPA Notice Contact field is required to Win an Opportunity.</errorMessage>
+</ValidationRule>

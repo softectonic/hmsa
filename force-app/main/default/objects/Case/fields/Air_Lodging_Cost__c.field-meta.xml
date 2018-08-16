@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Air_Lodging_Cost__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Sum of costs from booking information</inlineHelpText>
+    <label>Air &amp; Lodging Cost</label>
+    <summarizedField>Booking_Information__c.Cost__c</summarizedField>
+    <summaryForeignKey>Booking_Information__c.Case__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

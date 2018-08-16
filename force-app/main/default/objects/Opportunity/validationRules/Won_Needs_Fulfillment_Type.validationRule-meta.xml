@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Won_Needs_Fulfillment_Type</fullName>
+    <active>false</active>
+    <description>Fires to confirm that &quot;Fulfillment Type?&quot; field is filled out before the Opportunity can go to Closed/Won.</description>
+    <errorConditionFormula>$User.Run_Validation__c &amp;&amp;
+ISBLANK( TEXT(  Fulfillment_Type__c )) &amp;&amp;
+TEXT ( StageName ) = &quot;Closed Won&quot;</errorConditionFormula>
+    <errorDisplayField>Fulfillment_Type__c</errorDisplayField>
+    <errorMessage>Fulfillment Type is required to move to Closed/Won.</errorMessage>
+</ValidationRule>

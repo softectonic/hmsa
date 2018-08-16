@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FAQ</fullName>
+    <active>true</active>
+    <description>This can be used for simple question and answer articles</description>
+    <label>FAQ</label>
+    <picklistValues>
+        <picklist>Applicable_Department__c</picklist>
+        <values>
+            <fullName>CR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QUEST</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Article_Audience__c</picklist>
+        <values>
+            <fullName>Employer Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Member</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Provider</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Plan_LOB__c</picklist>
+        <values>
+            <fullName>Akamai Advantage %28AA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EUTF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Essential Advantage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Federal Employee Program %28FEP%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Federal Plan 87</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HMO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Business %28PB%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QUEST</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

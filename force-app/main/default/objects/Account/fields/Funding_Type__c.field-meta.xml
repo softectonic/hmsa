@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Funding_Type__c</fullName>
+    <description>Dependent on Funding Mechanism</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Funding Type based on the medical plan.</inlineHelpText>
+    <label>Funding Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Funding_Type</valueSetName>
+    </valueSet>
+</CustomField>

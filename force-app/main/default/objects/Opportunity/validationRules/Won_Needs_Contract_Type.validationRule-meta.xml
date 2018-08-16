@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Won_Needs_Contract_Type</fullName>
+    <active>true</active>
+    <description>The Contract Type field needs at least one entry to Win an Opportunity.</description>
+    <errorConditionFormula>$User.Run_Validation__c &amp;&amp;
+ISBLANK ( Contract_Type__c ) &amp;&amp;
+TEXT (  StageName ) = &#39;Closed Won&#39; &amp;&amp;
+TEXT (  Funding_Type__c ) = &#39;Fully Insured&#39;</errorConditionFormula>
+    <errorDisplayField>Contract_Type__c</errorDisplayField>
+    <errorMessage>At least 1 Contract Type entry is required for this kind of Opportunity.</errorMessage>
+</ValidationRule>

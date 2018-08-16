@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AMS_Event</fullName>
+    <active>true</active>
+    <description>Used for internal events</description>
+    <label>AMS Event</label>
+    <picklistValues>
+        <picklist>Additional_Event_Support__c</picklist>
+        <values>
+            <fullName>AskHMSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blue Zones Project</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sharecare Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Well-being Consultant</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>HealthCloudGA__TaskType__c</picklist>
+        <values>
+            <fullName>Administrative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clinical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uncategorized</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subject</picklist>
+        <values>
+            <fullName>Meeting</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Account Planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Reports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HMSA Health%2FWell-Being Programs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal Issues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proposal Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Issues</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unemployment_Insurance_No__c</fullName>
+    <encrypted>false</encrypted>
+    <externalId>false</externalId>
+    <inlineHelpText>This company&#39;s Unemployment Insurance ID Number for the state of Hawaii.</inlineHelpText>
+    <label>Unemployment Insurance No.</label>
+    <length>20</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

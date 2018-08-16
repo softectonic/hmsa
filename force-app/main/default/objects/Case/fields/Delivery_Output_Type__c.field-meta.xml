@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivery_Output_Type__c</fullName>
+    <description>Used on the Group Brochure Request</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select how you would like the SAS team to prepare the output documents.</inlineHelpText>
+    <label>Delivery Output Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Mail - Loose Materials</fullName>
+                <default>false</default>
+                <label>Mail - Loose Materials</label>
+            </value>
+            <value>
+                <fullName>Mail - Collation into envelopes</fullName>
+                <default>false</default>
+                <label>Mail - Collation into envelopes</label>
+            </value>
+            <value>
+                <fullName>Return to Rep - Loose Materials</fullName>
+                <default>false</default>
+                <label>Return to Rep - Loose Materials</label>
+            </value>
+            <value>
+                <fullName>Return to Rep - Collation in Envelopes</fullName>
+                <default>false</default>
+                <label>Return to Rep - Collation in Envelopes</label>
+            </value>
+            <value>
+                <fullName>Return to Rep - Soft Copy (Email)</fullName>
+                <default>false</default>
+                <label>Return to Rep - Soft Copy (Email)</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Eligible_Members__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Defaulted from Total Eligible Employees for New To Blue and Win Back.  Defaulted from Member Count Total for Renewal and Product Change.</inlineHelpText>
+    <label>Total Eligible Members</label>
+    <precision>6</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

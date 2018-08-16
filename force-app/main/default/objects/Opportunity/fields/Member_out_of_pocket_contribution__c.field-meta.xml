@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Member_out_of_pocket_contribution__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter the amount the member will need to contribute to the premiums.  Do not enter if you are using the &quot;Employer&#39;s % of Total Premium&quot; value instead.</inlineHelpText>
+    <label>Member out-of-pocket contribution</label>
+    <precision>6</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

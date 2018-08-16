@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage_Number__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE ( TEXT ( StageName ),
+&#39;New&#39;, 1, 
+&#39;Planning&#39;, 2, 
+&#39;Quoting / Negotiation&#39;, 3,
+&#39;Post Proposal Acceptance&#39;, 4,
+&#39;Closed Won&#39;, 5,
+0 )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Stage Number</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

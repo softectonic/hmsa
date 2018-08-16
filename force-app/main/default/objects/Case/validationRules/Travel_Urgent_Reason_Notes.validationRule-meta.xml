@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Travel_Urgent_Reason_Notes</fullName>
+    <active>true</active>
+    <description>If Urgent Reason is Other require user to enter Urgent Reason Notes</description>
+    <errorConditionFormula>AND (TEXT(Urgent_Reason__c) = &quot;Other&quot; , ISBLANK( Urgent_Reason_Notes__c ))</errorConditionFormula>
+    <errorDisplayField>Urgent_Reason_Notes__c</errorDisplayField>
+    <errorMessage>Urgent Reason is Other please enter Urgent Reason Notes.</errorMessage>
+</ValidationRule>

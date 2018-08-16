@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_cannot_be_less_than_Start_Date</fullName>
+    <active>true</active>
+    <description>Active Through Date must be past Start Date</description>
+    <errorConditionFormula>$User.Run_Validation__c &amp;&amp;
+Active_Through__c   &lt;=   Start_Date__c</errorConditionFormula>
+    <errorDisplayField>Active_Through__c</errorDisplayField>
+    <errorMessage>Active Through date must be after Start Date.</errorMessage>
+</ValidationRule>

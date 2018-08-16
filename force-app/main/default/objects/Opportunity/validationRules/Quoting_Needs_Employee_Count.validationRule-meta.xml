@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quoting_Needs_Employee_Count</fullName>
+    <active>true</active>
+    <errorConditionFormula>$User.Run_Validation__c &amp;&amp;
+ Stage_Number__c &gt;= 3 &amp;&amp;
+ISBLANK ( Employee_Count__c )</errorConditionFormula>
+    <errorDisplayField>Employee_Count__c</errorDisplayField>
+    <errorMessage>Employee Count is required to move into the Quoting / Negotiation stage.</errorMessage>
+</ValidationRule>

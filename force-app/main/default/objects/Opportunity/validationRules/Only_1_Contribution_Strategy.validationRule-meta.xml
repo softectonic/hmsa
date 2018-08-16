@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Only_1_Contribution_Strategy</fullName>
+    <active>true</active>
+    <description>Don&#39;t allow values in both the &#39;Employer&#39;s % of Total Premium&#39; and 
+&#39;Member out-of-pocket contribution&#39; at the same time.</description>
+    <errorConditionFormula>$User.Run_Automation__c &amp;&amp;
+$User.Run_Validation__c &amp;&amp;
+NOT ISBLANK( Employer_s_of_Total_Premium__c ) &amp;&amp;
+NOT ISBLANK( Member_out_of_pocket_contribution__c )</errorConditionFormula>
+    <errorDisplayField>Employer_s_of_Total_Premium__c</errorDisplayField>
+    <errorMessage>You may not have values in both &#39;Employer&#39;s % of Total Premium&#39; and 
+&#39;Member out-of-pocket contribution&#39; at the same time.</errorMessage>
+</ValidationRule>

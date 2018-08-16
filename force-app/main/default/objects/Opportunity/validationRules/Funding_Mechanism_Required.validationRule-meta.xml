@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Funding_Mechanism_Required</fullName>
+    <active>true</active>
+    <description>Ensures Funding Mechanism is not empty when moving opp to the Post Proposal Acceptance stage.</description>
+    <errorConditionFormula>$User.Run_Automation__c &amp;&amp;
+$User.Run_Validation__c &amp;&amp;
+ISPICKVAL(StageName, &quot;Post Proposal Acceptance&quot;)
+&amp;&amp;
+ISBLANK (TEXT( Funding_Mechanism__c ))</errorConditionFormula>
+    <errorDisplayField>Funding_Mechanism__c</errorDisplayField>
+    <errorMessage>Please indicate a Funding Mechanism before moving to Post Proposal Acceptance stage.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HMSA_Secure_Employee_Count__c</fullName>
+    <externalId>false</externalId>
+    <label>HMSA Secure Employee Count</label>
+    <summaryFilterItems>
+        <field>MemberPlan.HMSA_Secure_Employee__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>MemberPlan.MemberId</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

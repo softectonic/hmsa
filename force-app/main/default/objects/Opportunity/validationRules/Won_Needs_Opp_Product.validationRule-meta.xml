@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Won_Needs_Opp_Product</fullName>
+    <active>false</active>
+    <description>This rule ensures a Opp has at least one Product.</description>
+    <errorConditionFormula>ISPICKVAL( StageName, &quot;Closed Won&quot;) &amp;&amp;  
+NOT(HasOpportunityLineItem)</errorConditionFormula>
+    <errorMessage>Opportunity must have at least one Product before moving to Closed Won.</errorMessage>
+</ValidationRule>
